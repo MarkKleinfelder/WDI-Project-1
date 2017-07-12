@@ -44,7 +44,7 @@ function pTwoStop(){
 
 //------------------------------PLACES QUESTIONS IN BOX-----------------------------//
 
-var questionOne = ['q', 'u', 'e'];
+var questionOne = ['r', 'u', 'e'];
 var pOneQ;
 
 function setQ(){
@@ -54,6 +54,20 @@ function setQ(){
 
 //--------------------------------------------------------------------------------//
 
+
+var answer = document.getElementById('answerBox');
+var challenge = document.getElementById('qBox');
+
+function checkAnswer(){
+	console.log('checking answer. Thanks!');
+	if(answer.value == pOneQ){
+		console.log('Correct!');
+		challenge.innerHTML = '';
+	}else{
+		console.log('wrong');
+		document.getElementById('answerBox').value = '';
+	}
+}
 
 
 

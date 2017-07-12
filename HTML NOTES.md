@@ -58,7 +58,9 @@ for(i = 0; i < q1.length; i++){
 	}
 }
 
-
+button start 
+begin -- start time
+got it -- stop time --> log time to score var
 
 
 

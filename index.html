@@ -11,8 +11,8 @@
 <button type="button" onclick="pOneStop()">STOP TIME</button>
 
 
-	<input type="text" id="answer">
-	<button type="button" onclick="checkAnswer()">I GOT IT</button><!--submits answer for check-->
+	<input type="text" onkeyup="checkAnswer()" id="answerBox">
+	<button type="button"  onclick="checkAnswer()">I GOT IT</button><!--submits answer for check-->
 
 
 <h1 id="pTwoTimer"></h1>
@@ -22,9 +22,10 @@
 <button type="button" onclick="pTwoStop()">STOP TIME</button>
 
 
-<div>
-<h1 id="qBox"><h1>
-</div>
+
+<h4 id="qBox"><h4>
+<button type="button" id="showQ" onclick="setQ()">Challenge</button> 
+
 
 
 
