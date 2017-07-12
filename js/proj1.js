@@ -42,7 +42,7 @@ function pTwoStop(){
 
 
 
-//------------------------------PLACES QUESTIONS IN BOX-----------------------------//
+//---------------------PLAYER ONE PLACES QUESTIONS IN BOX-------------------//
 
 var questionOne = ['r', 'u', 'e'];
 var pOneQ;
@@ -50,9 +50,10 @@ var pOneQ;
 function setQ(){
 	pOneQ=questionOne[0];
 	document.getElementById('qBox').innerHTML = pOneQ;
-}
+	
+};
 
-//--------------------------------------------------------------------------------//
+//--------------------PLAYER ONE ANSWER CHECK--------------------------//
 
 
 var answer = document.getElementById('answerBox');
@@ -63,11 +64,49 @@ function checkAnswer(){
 	if(answer.value == pOneQ){
 		console.log('Correct!');
 		challenge.innerHTML = '';
+		document.getElementById('answerBox').value = '';
+
 	}else{
 		console.log('wrong');
 		document.getElementById('answerBox').value = '';
 	}
-}
+};
+
+
+//-----------------PLAYER TWO PLACES QUESION IN BOX----------//
+
+var questionTwo = ['v', 'u', 'e'];
+var pTwoQ;
+
+function setQTwo(){
+	pTwoQ=questionTwo[0];
+	document.getElementById('qBoxTwo').innerHTML = pTwoQ;
+	
+};
+
+
+
+
+
+//---------------PLAYER 2 ANSWER CHECK----------------// 
+
+var answerTwo = document.getElementById('answerBoxTwo');
+var challengeTwo = document.getElementById('qBoxTwo');
+
+function checkAnswerTwo(){
+	console.log('checking answer 2. Thanks!');
+	if(answerTwo.value == pTwoQ){
+		console.log('P2 Correct!');
+		challengeTwo.innerHTML = '';
+		document.getElementById('answerBoxTwo').value = '';
+
+	}else{
+		console.log('P2 wrong');
+		document.getElementById('answerBoxTwo').value = '';
+	}
+};
+
+
 
 
 

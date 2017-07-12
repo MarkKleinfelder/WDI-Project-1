@@ -4,27 +4,55 @@
 	<title>Project-1 Game</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
-<h1 id="pOneTimer"></h1>
-<h2 id="pOneScore"></h2>
-<button type="button" onclick="pOneBegin()">START TIME</button>
-<br>
-<button type="button" onclick="pOneStop()">STOP TIME</button>
+
+<div id="playerOneBoard"><!--right 1/3 of screen-->
 
 
-	<input type="text" onkeyup="checkAnswer()" id="answerBox">
-	<button type="button"  onclick="checkAnswer()">I GOT IT</button><!--submits answer for check-->
+  <h1 id="pOneTimer"></h1>
+  <h2 id="pOneScore"></h2>
 
+  <h3 id="qBox"><h3> <!--displays player 1 challenge-->
+  
+  <button type="button" id="showQ" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
+  
+  <button type="button" onclick="pOneBegin()">START TIME</button> <!--TEMP FOR TEST******REMOVE******-->
+
+  <button type="button" onclick="pOneStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+  
+  <input type="text" onkeyup="checkAnswer()" id="answerBox"> <!--player 1 typed answer goes here **make hidden?-->
+
+  <button type="button"  onclick="checkAnswer()">P1 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
+
+
+</div>
+
+
+<!--****************************************************************-->
+
+
+<div id="playerTwoBoard"><!--left 1/3 of board-->
 
 <h1 id="pTwoTimer"></h1>
 <h2 id="pTwoScore"></h2>
-<button type="button" onclick="pTwoBegin()">START TIME</button>
-<br>
-<button type="button" onclick="pTwoStop()">STOP TIME</button>
+
+ <h3 id="qBoxTwo"><h3> <!--displays player 2 challenge-->
+
+<button type="button" id="showQTwo" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
+
+<button type="button" onclick="pTwoBegin()">START TIME</button><!--TEMP FOR TEST******REMOVE******-->
+
+<button type="button" onclick="pTwoStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+
+<input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo"> <!--player 2 typed answer goes here **make hidden?-->
+
+ <button type="button"  onclick="checkAnswerTwo()">P2 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
 
 
-<h4 id="qBox"><h4>
-<button type="button" id="showQ" onclick="setQ()">Challenge</button> 
+
+</div>
+
+
 
 
 
