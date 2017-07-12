@@ -4,6 +4,9 @@ window.onload = function ready(){
 	
 };
 
+//--------------------CHARACTER GENERATOR--------------//
+function 
+
 
 //--------------------START BUTTON---------------------//
 
@@ -14,8 +17,17 @@ function gameStart(){
   document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
   setTimeout(function(){
   	pOneBegin();
+  	document.getElementById('answerBox').focus();
   }, 3000);
 };
+
+//--------------------TURN START DELAY-----------------------------------//
+
+function startDelay(){
+	setTimeout(function(){
+		pTwoBegin();
+	}, 3000);
+}
 
 
 
@@ -24,6 +36,7 @@ function gameStart(){
 var pOneScore = 0;
 var pOneTime = 0;
 var pOneTimer;
+
 function pOneBegin(){
   setQ();
  pOneTimer = setInterval(function(){
@@ -36,13 +49,19 @@ function pOneStop(){
 	pOneScore = pOneTime;
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
+	startDelay();
 };
+
+
 //-------------------PLAYER TWO BUTTONS AND SCORE-----------------------------------//
 
 var pTwoScore = 0;
 var pTwoTime = 0;
 var pTwoTimer;
+
 function pTwoBegin(){
+	document.getElementById('answerBoxTwo').focus();
+	setQTwo();
  pTwoTimer = setInterval(function(){
 		pTwoTime++;
 		document.getElementById('pTwoTimer').innerHTML = pTwoTime;
@@ -50,7 +69,7 @@ function pTwoBegin(){
 }
 function pTwoStop(){
 	clearInterval(pTwoTimer);
-	pTwoScore =pTwoTime;
+	pTwoScore = pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
 	console.log('button working');
 };
@@ -118,6 +137,7 @@ function checkAnswerTwo(){
 		console.log('P2 Correct!');
 		challengeTwo.innerHTML = '';
 		document.getElementById('answerBoxTwo').value = '';
+		pTwoStop();
 
 	}else{
 		console.log('P2 wrong');
