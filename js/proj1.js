@@ -16,19 +16,72 @@ function makeChar(){
 
 }
 
+//-------------PLAYER COUNTDOWN TIMER DISPLAYS---------------//
 
-//--------------------START BUTTON---------------------//
+function countOne(){
+	setTimeout(timerPOneReady,0)
+	setTimeout(timerThree, 2000)
+	setTimeout(timerTwo, 3000)
+	setTimeout(timerOne, 4000)
+	setTimeout(timerPOne, 5000)
+
+}
+
+function countTwo(){
+	setTimeout(timerPTwoReady,0)
+	setTimeout(timerThree, 2000)
+	setTimeout(timerTwo, 3000)
+	setTimeout(timerOne, 4000)
+	setTimeout(timerPTwo, 5000)
+
+
+}
+//----ready message p1----//
+function timerPOneReady(){
+	document.getElementById('countDownDisplay').innerHTML = "PLAYER 1 READY";
+}
+//----ready message p2---//
+function timerPTwoReady(){
+	document.getElementById('countDownDisplay').innerHTML = "PLAYER 2 READY";
+}
+
+function timerThree(){
+	document.getElementById('countDownDisplay').innerHTML = "3";
+}
+
+function timerTwo(){
+	document.getElementById('countDownDisplay').innerHTML = "2";
+}
+
+function timerOne(){
+	document.getElementById('countDownDisplay').innerHTML = "1";
+}
+
+//-----p1 start------//
+function timerPOne(){
+	document.getElementById('countDownDisplay').innerHTML = "DRAW!";
+	pOneBegin();
+  	document.getElementById('answerBox').focus();
+  	}
+
+//-------p2 start-----//
+function timerPTwo(){
+	document.getElementById('countDownDisplay').innerHTML = "DRAW!";
+	pTwoBegin();
+}
+
+
+//--------------------START BUTTON---------------------------//
 
 function gameStart(){
   document.getElementById('showQ').classList.toggle('hideMe',false);
   document.getElementById('showQTwo').classList.toggle('hideMe', false);
   document.getElementById('answerBox').classList.toggle('hideMe',false);
   document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
-  setTimeout(function(){
-  	pOneBegin();
-  	document.getElementById('answerBox').focus();
-  }, 3000);
+ 
+  countOne()
 };
+
 
 //--------------------TURN START DELAY-----------------------------------//
 
@@ -38,9 +91,6 @@ function startDelay(){
 	}, 3000);
 }
 
-
-
-
 //--------------------PLAYER ONE BUTTONS AND SCORE-------------------------------//
 var pOneScore = 0;
 var pOneTime = 0;
@@ -48,7 +98,7 @@ var pOneTimer;
 
 function pOneBegin(){
   setQ();
- pOneTimer = setInterval(function(){
+   pOneTimer = setInterval(function(){
 		pOneTime++;
 		document.getElementById('pOneTimer').innerHTML = pOneTime;
  }, 100);
@@ -58,7 +108,7 @@ function pOneStop(){
 	pOneScore = pOneTime;
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
-	startDelay();
+	countTwo();
 };
 
 
@@ -71,7 +121,7 @@ var pTwoTimer;
 function pTwoBegin(){
 	document.getElementById('answerBoxTwo').focus();
 	setQTwo();
- pTwoTimer = setInterval(function(){
+    pTwoTimer = setInterval(function(){
 		pTwoTime++;
 		document.getElementById('pTwoTimer').innerHTML = pTwoTime;
  }, 100);
@@ -83,14 +133,8 @@ function pTwoStop(){
 	console.log('button working');
 };
 
-
- 
-
-
-
 //---------------------PLAYER ONE PLACES QUESTIONS IN BOX-------------------//
 
-//var questionOne = ['r', 'u', 'e'];//
 var pOneQ;
 
 function setQ(){
@@ -113,6 +157,7 @@ function checkAnswer(){
 		challenge.innerHTML = '';
 		pOneStop();
 		document.getElementById('answerBox').value = '';
+		document.getElementById('countDownDisplay').value = '';
 
 	}else{
 		console.log('wrong');
@@ -123,7 +168,6 @@ function checkAnswer(){
 
 //-----------------PLAYER TWO PLACES QUESION IN BOX----------//
 
-//var questionTwo = ['v', 'u', 'e'];//
 var pTwoQ;
 
 function setQTwo(){
@@ -149,6 +193,8 @@ function checkAnswerTwo(){
 		challengeTwo.innerHTML = '';
 		document.getElementById('answerBoxTwo').value = '';
 		pTwoStop();
+		document.getElementById('countDownDisplay').value = '';
+		winState();
 
 	}else{
 		console.log('P2 wrong');
@@ -156,25 +202,18 @@ function checkAnswerTwo(){
 	}
 };
 
+//----------------WIN STATE-----------------//
+
+function winState(){
+	if(pOneScore < pTwoScore){
+		document.getElementById("winner").innerHTML="PLAYER ONE WINS!";
+		//----add game wins counter---//
+	}else{
+		document.getElementById("winner").innerHTML="PLAYER TWO WINS!";
+		//----add game wins counter-----//
+
+	}
+}
 
 
-
-
-
-/*
-	pOneAns;
-
-	function checkAnswer(){
-	var pOneAns = document.getElementById('answer').value;
-
-	console.log(pAnswer);
-	if(answer.value == ''){
-	alert('COMLETE THE CHALLENGE');
-} else if{
-	alert("Well Done");
-	answer.value = 'pOneQ[0]';
-
-}	
-};
-*/
 
