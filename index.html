@@ -5,6 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 
+<button type="button" onClick="gameStart()" id="startButton">START</button>
+
+
+
 <div id="playerOneBoard"><!--right 1/3 of screen-->
 
 
@@ -13,13 +17,13 @@
 
   <h3 id="qBox"><h3> <!--displays player 1 challenge-->
   
-  <button type="button" id="showQ" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
+  <button type="button" id="showQ" class="hideMe" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
   
   <button type="button" onclick="pOneBegin()">START TIME</button> <!--TEMP FOR TEST******REMOVE******-->
 
   <button type="button" onclick="pOneStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
   
-  <input type="text" onkeyup="checkAnswer()" id="answerBox"> <!--player 1 typed answer goes here **make hidden?-->
+  <input type="text" onkeyup="checkAnswer()" id="answerBox" class="hideMe"> <!--player 1 typed answer goes here **make hidden?-->
 
   <button type="button"  onclick="checkAnswer()">P1 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
@@ -37,13 +41,13 @@
 
  <h3 id="qBoxTwo"><h3> <!--displays player 2 challenge-->
 
-<button type="button" id="showQTwo" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
+<button type="button" id="showQTwo" class="hideMe" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
 
 <button type="button" onclick="pTwoBegin()">START TIME</button><!--TEMP FOR TEST******REMOVE******-->
 
 <button type="button" onclick="pTwoStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
 
-<input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo"> <!--player 2 typed answer goes here **make hidden?-->
+<input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo" class="hideMe"> <!--player 2 typed answer goes here **make hidden?-->
 
  <button type="button"  onclick="checkAnswerTwo()">P2 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 

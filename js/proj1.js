@@ -1,13 +1,31 @@
 window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
 	//clearInterval(beginTimer);
+	
 };
+
+
+//--------------------START BUTTON---------------------//
+
+function gameStart(){
+  document.getElementById('showQ').classList.toggle('hideMe',false);
+  document.getElementById('showQTwo').classList.toggle('hideMe', false);
+  document.getElementById('answerBox').classList.toggle('hideMe',false);
+  document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
+  setTimeout(function(){
+  	pOneBegin();
+  }, 3000);
+};
+
+
+
 
 //--------------------PLAYER ONE BUTTONS AND SCORE-------------------------------//
 var pOneScore = 0;
 var pOneTime = 0;
 var pOneTimer;
 function pOneBegin(){
+  setQ();
  pOneTimer = setInterval(function(){
 		pOneTime++;
 		document.getElementById('pOneTimer').innerHTML = pOneTime;
@@ -15,7 +33,7 @@ function pOneBegin(){
 }
 function pOneStop(){
 	clearInterval(pOneTimer);
-	pOneScore =pOneTime;
+	pOneScore = pOneTime;
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
 };
@@ -64,6 +82,7 @@ function checkAnswer(){
 	if(answer.value == pOneQ){
 		console.log('Correct!');
 		challenge.innerHTML = '';
+		pOneStop();
 		document.getElementById('answerBox').value = '';
 
 	}else{
