@@ -19,7 +19,7 @@ function pOneStop(){
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
 };
-//----------------------------------------------------------------------------//
+//-------------------PLAYER TWO BUTTONS AND SCORE-----------------------------------//
 
 var pTwoScore = 0;
 var pTwoTime = 0;
@@ -42,18 +42,36 @@ function pTwoStop(){
 
 
 
-//----------use this for to check answers------------//
+//------------------------------PLACES QUESTIONS IN BOX-----------------------------//
+
+var questionOne = ['q', 'u', 'e'];
+var pOneQ;
+
+function setQ(){
+	pOneQ=questionOne[0];
+	document.getElementById('qBox').innerHTML = pOneQ;
+}
+
+//--------------------------------------------------------------------------------//
 
 
-function checkAnswer(){
-	var pAnswer = document.getElementById('answer').value;
+
+
+
+/*
+	pOneAns;
+
+	function checkAnswer(){
+	var pOneAns = document.getElementById('answer').value;
+
 	console.log(pAnswer);
 	if(answer.value == ''){
 	alert('COMLETE THE CHALLENGE');
 } else if{
 	alert("Well Done");
-	answer.value = '';
+	answer.value = 'pOneQ[0]';
 
 }	
-}
+};
+*/
 
