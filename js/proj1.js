@@ -4,8 +4,17 @@ window.onload = function ready(){
 	
 };
 
-//--------------------CHARACTER GENERATOR--------------//
-function 
+//--------------------CHARACTER (QUESTION) GENERATOR--------------//
+
+var char = "abcdefghijklmnopqrstuvwxyz1234567890";
+var question = "";
+
+function makeChar(){
+  for(var i=0; i < char.length; i++){
+  	question = char.charAt(Math.floor(Math.random()*char.length));
+  }
+
+}
 
 
 //--------------------START BUTTON---------------------//
@@ -81,11 +90,12 @@ function pTwoStop(){
 
 //---------------------PLAYER ONE PLACES QUESTIONS IN BOX-------------------//
 
-var questionOne = ['r', 'u', 'e'];
+//var questionOne = ['r', 'u', 'e'];//
 var pOneQ;
 
 function setQ(){
-	pOneQ=questionOne[0];
+	makeChar();
+	pOneQ=question;
 	document.getElementById('qBox').innerHTML = pOneQ;
 	
 };
@@ -113,11 +123,12 @@ function checkAnswer(){
 
 //-----------------PLAYER TWO PLACES QUESION IN BOX----------//
 
-var questionTwo = ['v', 'u', 'e'];
+//var questionTwo = ['v', 'u', 'e'];//
 var pTwoQ;
 
 function setQTwo(){
-	pTwoQ=questionTwo[0];
+	makeChar();
+	pTwoQ=question;
 	document.getElementById('qBoxTwo').innerHTML = pTwoQ;
 	
 };
