@@ -1,6 +1,7 @@
 window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
 	//clearInterval(beginTimer);
+	document.getElementById('resetButton').style.visibility = 'hidden';
 	
 };
 
@@ -79,8 +80,30 @@ function gameStart(){
   document.getElementById('answerBox').classList.toggle('hideMe',false);
   document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
  
-  countOne()
+  countOne();
+  document.getElementById('startButton').style.visibility = 'hidden';
 };
+
+//-------------------TRY AGAIN BUTTON APPEAR---------------------//
+function resetButton(){
+	document.getElementById('resetButton').style.visibility = 'visible';
+}
+
+//--------------------TRY AGAIN FUNCTION----------------------//
+//function tryAgain(){
+//	clear pOneTime
+//	clear pOneTimer
+//	clear pTwoTime
+//	clear pTwoTimer
+//	clear text fields
+//
+
+//}
+
+
+
+
+
 
 
 //--------------------TURN START DELAY-----------------------------------//
@@ -97,15 +120,15 @@ var pOneTime = 0;
 var pOneTimer;
 
 function pOneBegin(){
-  setQ();
-   pOneTimer = setInterval(function(){
-		pOneTime++;
-		document.getElementById('pOneTimer').innerHTML = pOneTime;
- }, 100);
+    setQ();
+    pOneTimer = setInterval(function(){
+      pOneTime++;
+      document.getElementById('pOneTimer').innerHTML = pOneTime;
+ }, 50);
 }
 function pOneStop(){
 	clearInterval(pOneTimer);
-	pOneScore = pOneTime;
+	pOneScore += pOneTime;
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
 	countTwo();
@@ -124,12 +147,14 @@ function pTwoBegin(){
     pTwoTimer = setInterval(function(){
 		pTwoTime++;
 		document.getElementById('pTwoTimer').innerHTML = pTwoTime;
- }, 100);
+ }, 50);
 }
 function pTwoStop(){
 	clearInterval(pTwoTimer);
-	pTwoScore = pTwoTime;
+	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
+	document.getElementById('countDownDisplay').innerHTML = "";
+	resetButton();
 	console.log('button working');
 };
 
