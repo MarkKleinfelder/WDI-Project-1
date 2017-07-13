@@ -89,23 +89,6 @@ function resetButton(){
 	document.getElementById('resetButton').style.visibility = 'visible';
 }
 
-//--------------------TRY AGAIN FUNCTION----------------------//
-//function tryAgain(){
-//	clear pOneTime
-//	clear pOneTimer
-//	clear pTwoTime
-//	clear pTwoTimer
-//	clear text fields
-//
-
-//}
-
-
-
-
-
-
-
 //--------------------TURN START DELAY-----------------------------------//
 
 function startDelay(){
@@ -154,7 +137,8 @@ function pTwoStop(){
 	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
 	document.getElementById('countDownDisplay').innerHTML = "";
-	resetButton();
+	//resetButton();
+	//countOne();
 	console.log('button working');
 };
 
@@ -198,11 +182,8 @@ var pTwoQ;
 function setQTwo(){
 	makeChar();
 	pTwoQ=question;
-	document.getElementById('qBoxTwo').innerHTML = pTwoQ;
-	
+	document.getElementById('qBoxTwo').innerHTML = pTwoQ;	
 };
-
-
 
 
 
@@ -229,16 +210,82 @@ function checkAnswerTwo(){
 
 //----------------WIN STATE-----------------//
 
-function winState(){
-	if(pOneScore < pTwoScore){
-		document.getElementById("winner").innerHTML="PLAYER ONE WINS!";
-		//----add game wins counter---//
-	}else{
-		document.getElementById("winner").innerHTML="PLAYER TWO WINS!";
-		//----add game wins counter-----//
+var pOneRounds = 0;
+var pTwoRounds = 0;
+var totalRounds = 0;
 
+function winState(){
+	 if(pOneTime < pTwoTime){
+		document.getElementById("winner").innerHTML="PLAYER ONE WINS ROUND!";
+		pOneRounds += 1;
+		totalRounds = pOneRounds + pTwoRounds;
+		document.getElementById('pOneWins').innerHTML= pOneRounds;
+		setTimeout(function(){
+    		document.getElementById('pOneTimer').innerHTML = '';
+			document.getElementById('pTwoTimer').innerHTML = '';
+			pOneTime = 0;
+			pTwoTime = 0;
+			document.getElementById('winner').innerHTML='';
+			
+    	}, 2000);
+	    }else{
+		  document.getElementById("winner").innerHTML="PLAYER TWO WINS ROUND!";
+		  pTwoRounds += 1;
+		  totalRounds = pOneRounds + pTwoRounds;
+    	  document.getElementById("pTwoWins").innerHTML=pTwoRounds;
+    	  setTimeout(function(){
+    		  document.getElementById('pOneTimer').innerHTML = '';
+			  document.getElementById('pTwoTimer').innerHTML = '';
+			  pOneTime = 0;
+			  pTwoTime = 0;
+			  document.getElementById('winner').innerHTML='';
+
+    	  }, 2000);
+      
+      }if(totalRounds === 5){ //----checks game over condition---//
+      	 document.getElementById('pOneTimer').innerHTML = '';
+	     document.getElementById('pTwoTimer').innerHTML = '';
+			  pOneTime = 0;
+			  pTwoTime = 0;
+		gameOver();
+
+   }else if (totalRounds < 5){
+   	countOne();
+   }
+
+
+}
+
+function gameOver(){
+	resetButton();
+	if(pOneRounds > pTwoRounds){
+		document.getElementById("gameWinner").innerHTML="PLAYER ONE WINS GAME!";
+	}else{
+		document.getElementById("gameWinner").innerHTML="PLAYER TWO WINS GAME!";
 	}
 }
 
+
+//--------------------TRY AGAIN FUNCTION----------------------//
+function tryAgain(){
+	//document.getElementById('pOneTimer').innerHTML = '';
+	document.getElementById('pOneScore').innerHTML = '';
+	document.getElementById('pOneWins').innerHTML = '';
+	pOneScore = 0;
+	pOneRounds = 0;
+	//pOneTime = 0;
+	
+	//document.getElementById('pTwoTimer').innerHTML = '';
+	document.getElementById('pTwoScore').innerHTML = '';
+	document.getElementById('pTwoWins').innerHTML = '';
+	pTwoScore=0;
+	pTwoRounds=0;
+	//pTwoTime = 0;
+	totalRounds = 0;
+
+	document.getElementById('winner').innerHTML='';
+	document.getElementById('resetButton').style.visibility = 'hidden';
+	document.getElementById('startButton').style.visibility = 'visible';
+}
 
 

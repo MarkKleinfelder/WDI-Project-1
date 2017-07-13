@@ -2,12 +2,34 @@ body{
 	background-color: lightblue;
 }
 
+.playerName{
+	text-align: center;
+
+
+}
+
 
 .hideMe{
 	display:none;
 }
 
 
+.leftSide{
+	font-family:'Pinyon Script';
+	display:flex;
+	float:left;
+	background:lightyellow;
+	height:100%;
+	width:50%;
+}
 
+.rightSide{
+	font-family:'Pinyon Script';
+	display:flex;
+	float:right;
+	background:lightgreen;
+	height:100%;
+	width: 50%;
 
+}
 

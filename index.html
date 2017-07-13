@@ -2,14 +2,17 @@
 <html>
 <head>
 	<title>KISS</title>
+	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Rouge+Script" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
+
 
 <button type="button" onClick="gameStart()" id="startButton">START</button>
 <button type="button" onClick="tryAgain()" id="resetButton">TRY AGAIN?</button>
 
 <!--Round winner display-->
 <h2 id="winner"></h2>
+
 
 <!--Total win displays-->
 <h2 id="pOneWins"></h2>
@@ -24,55 +27,61 @@
 <h3 id="countDownDisplay"></h3>
 
 <!--*******************************************************-->
+<div class="duelBG">
+  <section class="leftSide">
+    <div id="playerOneBoard" class="pOneBoard"><!--LEFT 1/3 of screen-->
 
-<div id="playerOneBoard"><!--right 1/3 of screen-->
+      <h2 class="playerName">Player 1</h2>
+      <h1 id="pOneTimer"></h1>
+      <h2 id="pOneScore"></h2>
 
-
-  <h1 id="pOneTimer"></h1>
-  <h2 id="pOneScore"></h2>
-
-  <h3 id="qBox"><h3> <!--displays player 1 challenge-->
+      <h3 id="qBox"></h3> <!--displays player 1 challenge-->
   
-  <button type="button" id="showQ" class="hideMe" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
+      <button type="button" id="showQ" class="hideMe" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
   
-  <button type="button" onclick="pOneBegin()">START TIME</button> <!--TEMP FOR TEST******REMOVE******-->
+      <button type="button" onclick="pOneBegin()">START TIME</button> <!--TEMP FOR TEST******REMOVE******-->
 
-  <button type="button" onclick="pOneStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+      <button type="button" onclick="pOneStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
   
-  <input type="text" onkeyup="checkAnswer()" id="answerBox" class="hideMe"> <!--player 1 typed answer goes here **make hidden?-->
+      <input type="text" onkeyup="checkAnswer()" id="answerBox" class="hideMe"> <!--player 1 typed answer goes here **make hidden?-->
 
-  <button type="button"  onclick="checkAnswer()">P1 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
+      <button type="button"  onclick="checkAnswer()">P1 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
 
-</div>
+    </div>
+  </section>
 
 
 <!--****************************************************************-->
 
+  <section class="rightSide">
 
-<div id="playerTwoBoard"><!--left 1/3 of board-->
+    <div id="playerTwoBoard" class="pTwoBoard"><!--RIGHT 1/3 of board-->
+ 
+      <h2 class="playerName">Player 2</h2>
 
-<h1 id="pTwoTimer"></h1>
-<h2 id="pTwoScore"></h2>
+      <h1 id="pTwoTimer"></h1>
+      <h2 id="pTwoScore"></h2>
 
- <h3 id="qBoxTwo"><h3> <!--displays player 2 challenge-->
+      <h3 id="qBoxTwo"></h3> <!--displays player 2 challenge-->
+  
+      <button type="button" id="showQTwo" class="hideMe" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
 
-<button type="button" id="showQTwo" class="hideMe" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
+      <button type="button" onclick="pTwoBegin()">START TIME</button><!--TEMP FOR   TEST******REMOVE******-->
 
-<button type="button" onclick="pTwoBegin()">START TIME</button><!--TEMP FOR TEST******REMOVE******-->
+      <button type="button" onclick="pTwoStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
 
-<button type="button" onclick="pTwoStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+     <input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo" class="hideMe"> <!--player 2 typed answer goes here **make hidden?-->
 
-<input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo" class="hideMe"> <!--player 2 typed answer goes here **make hidden?-->
+       <button type="button"  onclick="checkAnswerTwo()">P2 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
- <button type="button"  onclick="checkAnswerTwo()">P2 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
+    </div>
 
-
-
-
+  </section>
 </div>
 
 
+<h1 id="gameWinner"></h1>
 
 
 
