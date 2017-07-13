@@ -1,35 +1,164 @@
 body{
-	background-color: lightblue;
+	background-image: url('Assets/DuelBG.png');
 }
 
-.playerName{
+.answerInputs{
+	width:;
 	text-align: center;
-
+	margin-left:auto;
 
 }
+#answerBox{
+	text-align: center;
+	font-size: 35px;
+	margin-left:;
+	margin-right:;
+	height: 45px;
+	width: 45px;
+	background:transparent;
+	border-radius: 25px;
+}
+
+#answerBoxTwo{
+	text-align: center;
+	font-size: 35px;
+	margin-left: ;
+	height: 45px;
+	width: 45px;
+	background:transparent;
+	border-radius: 25px;
+}
+
+.countDownDisplay{
+	height:100px;
+	width:100px;
+	margin-left:50%;
+}
+
+div.buttons{
+	display: block;
+	text-align: center;
+	z-index: 2;
+}
+ #startButton{
+ 	height:50px;
+ 	width:100px;
+ 	margin:auto;
+}
+
+}
+ #resetButton{
+ 	height:50px;
+ 	width:100px;
+ 	margin:auto;
+}
+
+
 
 
 .hideMe{
-	display:none;
+	
 }
 
 
 .leftSide{
 	font-family:'Pinyon Script';
-	display:flex;
-	float:left;
-	background:lightyellow;
+	position:absolute;
+	background:rgba(0,0,0,0.1);
 	height:100%;
 	width:50%;
+	top:0%;
+	left:0px;
+	z-index: -1;
+}
+
+.playerNameOne{
+	float:left;
+	margin-left: 20%;
+	margin-bottom: 10px;
+}
+
+.playerNameTwo{
+	float:right;
+	margin-right: 20%;
+	margin-bottom: 10px;
+}
+
+
+.playerNames{
+	
+}
+
+
+
+.qBox{
+	position: fixed;
+	z-index: 2;
 }
 
 .rightSide{
 	font-family:'Pinyon Script';
-	display:flex;
-	float:right;
-	background:lightgreen;
+	position:absolute;
+	background:rgba(0,255,0,0.1);
 	height:100%;
 	width: 50%;
-
+	top:0%;
+	right:0px;
+	z-index: -1;
 }
 
+.roundsBoxOne{
+	text-align:center;
+	font-size: 15px;
+	clear:left;
+	float:left;
+	margin-left: 20%;
+	margin-top:-15px;
+}
+
+.roundsBoxTwo{
+	text-align:;
+	font-size:15px;
+	clear:right;
+	float:right;
+	margin-right: 20%;
+	margin-top:-15px;
+}
+
+.roundsPOne{
+	color:red;
+	
+	
+
+	
+}
+
+.roundsPTwo{
+	color:blue;
+	
+	
+}
+.scoreBoxes{
+	
+	
+}
+
+.scoreBoxOne{
+	display:none;
+	
+	
+}
+
+.scoreBoxTwo{
+	display:none;
+	
+}
+
+.winner{
+	text-align: center;
+	margin-left:25%;
+	margin-top: 30%;
+	height:100px;
+	width:50%;
+	background-color: lightblue;
+}

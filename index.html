@@ -6,82 +6,123 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 
+<h1 class="hideMe" id="pOneTimer"></h1>
+<h1 class="hideMe" id="pTwoTimer"></h1>
+  
 
-<button type="button" onClick="gameStart()" id="startButton">START</button>
-<button type="button" onClick="tryAgain()" id="resetButton">TRY AGAIN?</button>
-
-<!--Round winner display-->
-<h2 id="winner"></h2>
+  
 
 
-<!--Total win displays-->
+
+<!-- round AND game winner display-->
+
+
+<!--Total win displays
 <h2 id="pOneWins"></h2>
 
-<h2 id="pTwoWins"></h2>
+<h2 id="pTwoWins"></h2> ******** changed to 'winner'-->
 
 <!--Ready Player Messages-->
-<h2 id="readyPlayerOne"></h2>
-<h2 id="readyPlayerTwo"></h2>
+<!--<h2 id="readyPlayer"></h2>      changed readyPlayerOne-->
+<!-- <h2 id="readyPlayerTwo"></h2>  changed to readyPlayer-->
 
 <!--game start/turn countdown-->
-<h3 id="countDownDisplay"></h3>
+<!--<h1 id="gameWinner"></h1> ******** changed to 'winner'-->
+
+
+<!--***********************classes *********************-->
+
+
+
+
+<!--start tryAgain buttons-->
+<div class="buttons">
+  <button type="button" onClick="gameStart()" id="startButton">START</button>
+</div>
+
+<div class="buttons">
+  <button type="button" onClick="tryAgain()" id="resetButton">TRY AGAIN?</button>
+</div>
+<!---players-->
+<div class="playerNames">
+  <h2 class="playerNameOne">Player 1</h2>
+  <h2 class="playerNameTwo">Player 2</h2>
+</div>
+
+<!--scores-rounds-->
+<div class="roundsBoxOne">
+  <h2 class="roundsPOne" id="pOneRounds">Wins: 1</h2>
+</div>
+
+<div class="roundsBoxTwo">
+  <h2 class="roundsPTwo" id="pTwoRounds">Wins: 4</h2>
+</div>
+
+<div class="scoreBoxes">
+  <h5 class="scoreBoxOne" id="pOneScore">245</h5>
+  <h5 class="scoreBoxTwo" id="pTwoScore">19</h5>
+</div>
+
+<!--round/game winner display-->
+<div class="winner">
+  <h2 id="winner"></h2>
+</div>
+
+<!--input boxes-->
+<div class="answerInputs">
+  <input type="text" class="hideMe" onkeyup="checkAnswer()" class="inputBox" id="answerBox">
+
+  <input type="text" class="hideMe" onkeyup="checkAnswerTwo()" class="inputBox" id="answerBoxTwo">
+</div>
 
 <!--*******************************************************-->
-<div class="duelBG">
-  <section class="leftSide">
-    <div id="playerOneBoard" class="pOneBoard"><!--LEFT 1/3 of screen-->
 
-      <h2 class="playerName">Player 1</h2>
-      <h1 id="pOneTimer"></h1>
-      <h2 id="pOneScore"></h2>
-
-      <h3 id="qBox"></h3> <!--displays player 1 challenge-->
+  <section class="leftSide"> <!--LEFT 1/3 of screen-->
+	
+	  <!--displays player 1 and 2 challenge-->
   
-      <button type="button" id="showQ" class="hideMe" onclick="setQ()">Challenge</button> <!--sets challenge in qBox, starts player 1 timer-->
+      <!--<button type="button" id="showQ" class="hideMe" onclick="setQ()">Challenge</button> sets challenge in qBox, starts player 1 timer-->
   
-      <button type="button" onclick="pOneBegin()">START TIME</button> <!--TEMP FOR TEST******REMOVE******-->
+      <!--<button type="button" class="hideMe" onclick="pOneBegin()">START TIME</button> TEMP FOR TEST******REMOVE******-->
 
-      <button type="button" onclick="pOneStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+      <!--<button type="button" class="hideMe" onclick="pOneStop()">STOP TIME</button>TEMP FOR TEST******REMOVE******-->
   
-      <input type="text" onkeyup="checkAnswer()" id="answerBox" class="hideMe"> <!--player 1 typed answer goes here **make hidden?-->
+      <!--player 1 typed answer goes here **make hidden?-->
 
-      <button type="button"  onclick="checkAnswer()">P1 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
+      <!--<button type="button" class="hideMe" onclick="checkAnswer()">P1 GO!</button>submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
-
-    </div>
   </section>
 
+
+
+
+<h3 id="countDownDisplay"></h3>
+<h3 class="qBox" id="qBox"></h3>
 
 <!--****************************************************************-->
 
   <section class="rightSide">
 
-    <div id="playerTwoBoard" class="pTwoBoard"><!--RIGHT 1/3 of board-->
+    <!--RIGHT 1/3 of board-->
  
-      <h2 class="playerName">Player 2</h2>
-
-      <h1 id="pTwoTimer"></h1>
-      <h2 id="pTwoScore"></h2>
-
-      <h3 id="qBoxTwo"></h3> <!--displays player 2 challenge-->
+      <!--***** <h3 id="qBoxTwo"></h3> ****displays in qBox-->
   
-      <button type="button" id="showQTwo" class="hideMe" onclick="setQTwo()">Challenge</button> <!--sets challenge in qBox, starts player 2 timer-->
+      <!--<button type="button" id="showQTwo" class="hideMe" onclick="setQTwo()">Challenge</button> sets challenge in qBox, starts player 2 timer-->
 
-      <button type="button" onclick="pTwoBegin()">START TIME</button><!--TEMP FOR   TEST******REMOVE******-->
+      <!--<button type="button" class="hideMe" onclick="pTwoBegin()">START TIME</button>TEMP FOR   TEST******REMOVE******-->
 
-      <button type="button" onclick="pTwoStop()">STOP TIME</button><!--TEMP FOR TEST******REMOVE******-->
+      <!--<button type="button" class="hideMe" onclick="pTwoStop()">STOP TIME</button>TEMP FOR TEST******REMOVE******-->
 
-     <input type="text" onkeyup="checkAnswerTwo()" id="answerBoxTwo" class="hideMe"> <!--player 2 typed answer goes here **make hidden?-->
+      <!--player 2 typed answer goes here **make hidden?-->
 
-       <button type="button"  onclick="checkAnswerTwo()">P2 GO!</button><!--submits answer for check*****TEMP FOR TEST*********REMOVE******-->
+       <!--<button type="button" class="hideMe" onclick="checkAnswerTwo()">P2 GO!</button>submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
-    </div>
 
   </section>
-</div>
 
 
-<h1 id="gameWinner"></h1>
+
+
 
 
 
