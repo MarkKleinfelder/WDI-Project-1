@@ -11,8 +11,7 @@ body{
 #answerBox{
 	text-align: center;
 	font-size: 35px;
-	margin-left:;
-	margin-right:;
+	margin:25px;
 	height: 45px;
 	width: 45px;
 	background:transparent;
@@ -22,7 +21,7 @@ body{
 #answerBoxTwo{
 	text-align: center;
 	font-size: 35px;
-	margin-left: ;
+	margin:25px;
 	height: 45px;
 	width: 45px;
 	background:transparent;
@@ -34,6 +33,8 @@ body{
 	width:100px;
 	margin-left:50%;
 }
+
+
 
 div.buttons{
 	display: block;
@@ -57,6 +58,7 @@ div.buttons{
 
 
 .hideMe{
+	
 	
 }
 
@@ -92,8 +94,11 @@ div.buttons{
 
 
 .qBox{
-	position: fixed;
+	font-size: 50px;
+	text-align: center;
 	z-index: 2;
+	margin:10px;
+
 }
 
 .rightSide{
@@ -154,11 +159,11 @@ div.buttons{
 	
 }
 
-.winner{
+.winnerBox{
 	text-align: center;
 	margin-left:25%;
-	margin-top: 30%;
-	height:100px;
+	margin-top: 20%;
+	height:50px;
 	width:50%;
 	background-color: lightblue;
 }

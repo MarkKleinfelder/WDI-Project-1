@@ -37,37 +37,37 @@ function countTwo(){
 
 
 }
-//----ready message p1----//
+//----ready message p1----//**changed from countDownDisplay to 'winner'**//
 function timerPOneReady(){
-	document.getElementById('countDownDisplay').innerHTML = "PLAYER 1 READY";
+	document.getElementById('winner').innerHTML = "PLAYER 1 READY";
 }
 //----ready message p2---//
 function timerPTwoReady(){
-	document.getElementById('countDownDisplay').innerHTML = "PLAYER 2 READY";
+	document.getElementById('winner').innerHTML = "PLAYER 2 READY";
 }
 
 function timerThree(){
-	document.getElementById('countDownDisplay').innerHTML = "3";
+	document.getElementById('winner').innerHTML = "3";
 }
 
 function timerTwo(){
-	document.getElementById('countDownDisplay').innerHTML = "2";
+	document.getElementById('winner').innerHTML = "2";
 }
 
 function timerOne(){
-	document.getElementById('countDownDisplay').innerHTML = "1";
+	document.getElementById('winner').innerHTML = "1";
 }
 
 //-----p1 start------//
 function timerPOne(){
-	document.getElementById('countDownDisplay').innerHTML = "DRAW!";
+	document.getElementById('winner').innerHTML = "DRAW!";
 	pOneBegin();
   	document.getElementById('answerBox').focus();
   	}
 
 //-------p2 start-----//
 function timerPTwo(){
-	document.getElementById('countDownDisplay').innerHTML = "DRAW!";
+	document.getElementById('winner').innerHTML = "DRAW!";
 	pTwoBegin();
 }
 
@@ -136,7 +136,7 @@ function pTwoStop(){
 	clearInterval(pTwoTimer);
 	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
-	document.getElementById('countDownDisplay').innerHTML = "";
+	document.getElementById('winner').innerHTML = "";
 	//resetButton();
 	//countOne();
 	console.log('button working');
@@ -166,7 +166,7 @@ function checkAnswer(){
 		challenge.innerHTML = '';
 		pOneStop();
 		document.getElementById('answerBox').value = '';
-		document.getElementById('countDownDisplay').value = '';
+		document.getElementById('winner').value = '';
 
 	}else{
 		console.log('wrong');
@@ -199,12 +199,12 @@ function checkAnswerTwo(){
 		challengeTwo.innerHTML = '';
 		document.getElementById('answerBoxTwo').value = '';
 		pTwoStop();
-		document.getElementById('countDownDisplay').value = '';
+		document.getElementById('winner').value = '';
 		winState();
 
 	}else{
 		console.log('P2 wrong');
-		document.getElementById('answerBoxTwo').value = '';
+		document.getElementById('winner').value = '';
 	}
 };
 
