@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>KISS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Rouge+Script" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
@@ -46,7 +47,9 @@
 <!---players-->
 <div class="playerNames">
   <h2 class="playerNameOne">Player 1</h2>
+  <img class="pointerLeft hideMe" id="pOnePointer" src="Assets/pointer1.png">
   <h2 class="playerNameTwo">Player 2</h2>
+  <img class="pointerRight hideMe" id="pTwoPointer" src="Assets/pointer1.png">
 </div>
 
 <!--scores-rounds-->
@@ -71,11 +74,13 @@
 
 <!--round/game winner display-->
 <div class="winnerBox">
-  <h2 id="winner"></h2>
+  <h2 id="winner">Player 2 ready!</h2>
 </div>
 
 <!--question display-->
-<h3 class="qBox" id="qBox"></h3>
+<div class="questionBoxDiv">
+  <h3 class="qBox" id="qBox"></h3>
+</div>
 
 <!--input boxes-->
 <div class="answerInputs">
