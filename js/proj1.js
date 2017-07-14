@@ -1,7 +1,7 @@
 window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
 	//clearInterval(beginTimer);
-    document.getElementById('resetButton').style.visibility = 'hidden';
+    document.getElementById('resetButton').classList.toggle('hideMe',true);
 	
 };
 
@@ -88,7 +88,7 @@ function gameStart(){
 
 //-------------------TRY AGAIN BUTTON APPEAR---------------------//
 function resetButton(){
-	document.getElementById('resetButton').style.visibility = 'visible';
+	document.getElementById('resetButton').classList.toggle('hideMe',false);
 }
 
 //--------------------TURN START DELAY-----------------------------------//
@@ -225,6 +225,8 @@ var totalRounds = 0;
 function winState(){
 	 if(pOneTime < pTwoTime){
 		document.getElementById("winner").innerHTML="Player 1 wins round!";
+		
+
 		pOneRounds += 1;
 		totalRounds = pOneRounds + pTwoRounds;
 		document.getElementById('pOneRounds').textContent += "X ";
@@ -233,11 +235,12 @@ function winState(){
 			document.getElementById('pTwoTimer').innerHTML = '';
 			pOneTime = 0;
 			pTwoTime = 0;
-			document.getElementById('winner').innerHTML='';
+			//document.getElementById('winner').innerHTML='';
 			
     	}, 2000);
 	    }else{
 		  document.getElementById("winner").innerHTML="Player 2 wins round!";
+		  
 		  pTwoRounds += 1;
 		  totalRounds = pOneRounds + pTwoRounds;
     	  document.getElementById("pTwoRounds").textContent += "X ";
@@ -246,7 +249,7 @@ function winState(){
 			  document.getElementById('pTwoTimer').innerHTML = '';
 			  pOneTime = 0;
 			  pTwoTime = 0;
-			  document.getElementById('winner').innerHTML='';
+			  //document.getElementById('winner').innerHTML='';
 
     	  }, 2000);
       
@@ -268,32 +271,44 @@ function gameOver(){
 	resetButton();
 	if(pOneRounds > pTwoRounds){
 		document.getElementById("winner").innerHTML="Player 1 wins game!";
+		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
 	}else{
 		document.getElementById("winner").innerHTML="Player 2 wins game!";
+		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
 	}
 }
 
 
 //--------------------TRY AGAIN FUNCTION----------------------//
 function tryAgain(){
-	//document.getElementById('pOneTimer').innerHTML = '';
+	console.log('tryAgain button working!')
+	document.getElementById('pOneRounds').innerHTML = '';
 	document.getElementById('pOneScore').innerHTML = '';
-	document.getElementById('pOneWins').innerHTML = '';
+	//document.getElementById('pOneWins').innerHTML = '';
 	pOneScore = 0;
 	pOneRounds = 0;
 	//pOneTime = 0;
 	
-	//document.getElementById('pTwoTimer').innerHTML = '';
+	document.getElementById('pTwoRounds').innerHTML = '';
 	document.getElementById('pTwoScore').innerHTML = '';
-	document.getElementById('pTwoWins').innerHTML = '';
+	//document.getElementById('pTwoWins').innerHTML = '';
 	pTwoScore=0;
 	pTwoRounds=0;
 	//pTwoTime = 0;
 	totalRounds = 0;
 
 	document.getElementById('winner').innerHTML='';
-	document.getElementById('resetButton').style.visibility = 'hidden';
+	document.getElementById('resetButton').classList.toggle('hideMe', true)
 	document.getElementById('startButton').style.visibility = 'visible';
+	document.getElementById('rightArm').classList.toggle('rightArmRotating',false);
+	document.getElementById('leftArm').classList.toggle('leftArmRotating',false);
 }
+function leftImgLose(){
+	document.getElementById('left').classList.toggle('leftImgLose',true);
+}
+function armsUp(){
+	document.getElementById('rightArm').classList.toggle('rightArmRotating',false);
+	document.getElementById('leftArm').classList.toggle('leftArmRotating',false);
 
+}
 

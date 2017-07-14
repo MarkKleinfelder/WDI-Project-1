@@ -7,7 +7,7 @@ body{
 	background-position: center;
 	background-repeat:no-repeat; 
 	background-size: cover;
-	
+	overflow: hidden;
 	z-index: -5;
 
 }
@@ -21,6 +21,7 @@ img{
 	position:relative;
 	top:0px;
 	left:50px;
+	transition: transform 1s ease-in, top 1s linear;
 }
 
 
@@ -39,6 +40,15 @@ img{
 	top:22%;
 	left:0;
 
+
+}
+
+.leftImgLose{
+	transform: rotate(-90deg);
+	top:150px;
+}
+.rightImgLose{
+
 }
 
 .arms{
@@ -47,24 +57,40 @@ img{
 
 }
 
-#leftArm{
+.left{
 	position:absolute;
 	top:112px;
-	left:50px;
+	left:49px;
 	transform: rotate(60deg);
 	transition: transform .5s ease-out;
 	z-index: 10;
 	
 }
 
-#leftArm:hover{
+.leftArmRotating{
 	transform: rotate(-5deg);
 }
+
+.right{
+	position:absolute;
+	top:116px;
+	left:730px;
+	transform: rotate(-60deg);
+	transition: transform .5s ease-out;
+	z-index: 10;
+}
+
+.rightArmRotating{
+	transform:rotate(3deg);
+}
+
+
 
 .buttons{
 	height:45px;
  	width:100px;
  	margin:auto;
+ 	z-index: 5;
 }
 
 #startButton{
@@ -85,6 +111,7 @@ img{
 	background-color:rgba(255, 238, 5, 0.3);
 	border:none;
 	border-radius: 50%;
+	z-index: 10;
 
 }
 
@@ -215,25 +242,7 @@ div.buttons{
 
 }
 
-.rightSide{
-	background-image:url(Assets/DuelingRight.png);
-	background-position:top right;
 
-	z-index: 5;
-}
-
-
-/*.rightSide{
-	position:absolute;
-	background-image: url(Assets/DuelingRight.png);
-	background-size:70%;
-	background-repeat: no-repeat;
-	height:100%;
-	width: 50%;
-	top:110px;
-	right:-110px;
-	z-index:-1;
-}*/
 
 .roundsBoxOne{
 	position:relative;
