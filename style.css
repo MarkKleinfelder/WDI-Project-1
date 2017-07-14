@@ -14,7 +14,7 @@ body{
 
 img{
 	width:38%;
-	z-index: 3;
+	z-index: 1;
 }
 
 .leftImg{
@@ -39,6 +39,26 @@ img{
 	top:22%;
 	left:0;
 
+}
+
+.arms{
+	z-index: 5;
+	
+
+}
+
+#leftArm{
+	position:absolute;
+	top:112px;
+	left:50px;
+	transform: rotate(60deg);
+	transition: transform .5s ease-out;
+	z-index: 10;
+	
+}
+
+#leftArm:hover{
+	transform: rotate(-5deg);
 }
 
 .buttons{
@@ -278,4 +298,14 @@ div.buttons{
 	height:50px;
 	width:30%;
 	background-color:;
+}
+
+
+
+/*--------------animations-----------*/
+
+@keyframes leftArmRotate {
+	0% {}
+	90% {}
+	100% {}
 }
