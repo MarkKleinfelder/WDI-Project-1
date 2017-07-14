@@ -136,7 +136,7 @@ function pTwoStop(){
 	clearInterval(pTwoTimer);
 	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
-	document.getElementById('winner').innerHTML = "";
+	//document.getElementById('winner').innerHTML = "";
 	//resetButton();
 	//countOne();
 	console.log('button working');
@@ -204,7 +204,7 @@ function checkAnswerTwo(){
 
 	}else{
 		console.log('P2 wrong');
-		document.getElementById('winner').value = '';
+		document.getElementById('answerBoxTwo').value = '';
 	}
 };
 
@@ -219,7 +219,7 @@ function winState(){
 		document.getElementById("winner").innerHTML="PLAYER ONE WINS ROUND!";
 		pOneRounds += 1;
 		totalRounds = pOneRounds + pTwoRounds;
-		document.getElementById('pOneRounds').innerHTML= pOneRounds;
+		document.getElementById('pOneRounds').innerHTML= "Wins: " + pOneRounds;
 		setTimeout(function(){
     		document.getElementById('pOneTimer').innerHTML = '';
 			document.getElementById('pTwoTimer').innerHTML = '';
@@ -232,7 +232,7 @@ function winState(){
 		  document.getElementById("winner").innerHTML="PLAYER TWO WINS ROUND!";
 		  pTwoRounds += 1;
 		  totalRounds = pOneRounds + pTwoRounds;
-    	  document.getElementById("pTwoRounds").innerHTML=pTwoRounds;
+    	  document.getElementById("pTwoRounds").innerHTML= "Wins: " + pTwoRounds;
     	  setTimeout(function(){
     		  document.getElementById('pOneTimer').innerHTML = '';
 			  document.getElementById('pTwoTimer').innerHTML = '';

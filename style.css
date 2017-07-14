@@ -1,5 +1,36 @@
 body{
-	background-image: url('Assets/DuelBG.png');
+	background-image: url('Assets/duelingSMBG.png');
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size:cover; 
+	
+	z-index: -5;
+}
+
+img{
+	width:35%;
+	z-index: 3;
+}
+
+.leftImg{
+	float:left;
+	margin-left:20px;
+	padding-top:30px;
+}
+
+
+.rightImg{
+	float:right;
+	margin-right:50px;
+}
+
+.images{
+	position:absolute;
+	width: 100%;
+	left:0;
+	top:21%;
+
+
 }
 
 .answerInputs{
@@ -26,6 +57,10 @@ body{
 	width: 45px;
 	background:transparent;
 	border-radius: 25px;
+}
+
+.backGround{
+	display:none;
 }
 
 .countDownDisplay{
@@ -55,24 +90,18 @@ div.buttons{
 }
 
 
-
-
 .hideMe{
-	
+
 	
 }
 
+/*.leftSide{
+	background-image:url("Assets/DuelingLeft.png");
+	display:inline-block;
+    background-repeat: no-repeat;
+	background-position: top left;
 
-.leftSide{
-	font-family:'Pinyon Script';
-	position:absolute;
-	background:rgba(0,0,0,0.1);
-	height:100%;
-	width:50%;
-	top:0%;
-	left:0px;
-	z-index: -1;
-}
+}*/
 
 .playerNameOne{
 	float:left;
@@ -102,15 +131,24 @@ div.buttons{
 }
 
 .rightSide{
-	font-family:'Pinyon Script';
+	background-image:url(Assets/DuelingRight.png);
+	background-position:top right;
+
+	z-index: 5;
+}
+
+
+/*.rightSide{
 	position:absolute;
-	background:rgba(0,255,0,0.1);
+	background-image: url(Assets/DuelingRight.png);
+	background-size:70%;
+	background-repeat: no-repeat;
 	height:100%;
 	width: 50%;
-	top:0%;
-	right:0px;
-	z-index: -1;
-}
+	top:110px;
+	right:-110px;
+	z-index:-1;
+}*/
 
 .roundsBoxOne{
 	text-align:center;
@@ -160,10 +198,11 @@ div.buttons{
 }
 
 .winnerBox{
+	border-radius: 25px;
 	text-align: center;
 	margin-left:25%;
 	margin-top: 20%;
 	height:50px;
 	width:50%;
-	background-color: lightblue;
+	background-color: rgba(100,100,100,.2);
 }

@@ -6,8 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 
-<h1 class="hideMe" id="pOneTimer"></h1>
-<h1 class="hideMe" id="pTwoTimer"></h1>
+<h1 class="backGround" id="pOneTimer"></h1>
+<h1 class="backGround" id="pTwoTimer"></h1>
   
 
   
@@ -51,16 +51,16 @@
 
 <!--scores-rounds-->
 <div class="roundsBoxOne">
-  <h2 class="roundsPOne" id="pOneRounds">Wins: 1</h2>
+  <h2 class="roundsPOne" id="pOneRounds"></h2>
 </div>
 
 <div class="roundsBoxTwo">
-  <h2 class="roundsPTwo" id="pTwoRounds">Wins: 4</h2>
+  <h2 class="roundsPTwo" id="pTwoRounds"></h2>
 </div>
 
 <div class="scoreBoxes">
-  <h5 class="scoreBoxOne" id="pOneScore">245</h5>
-  <h5 class="scoreBoxTwo" id="pTwoScore">19</h5>
+  <h5 class="scoreBoxOne" id="pOneScore"></h5>
+  <h5 class="scoreBoxTwo" id="pTwoScore"></h5>
 </div>
 
 <!--count down timer
@@ -71,11 +71,11 @@
 
 <!--round/game winner display-->
 <div class="winnerBox">
-  <h2 id="winner">PLAYER 2 WINS THE ROUND!</h2>
+  <h2 id="winner"></h2>
 </div>
 
 <!--question display-->
-<h3 class="qBox" id="qBox">w</h3>
+<h3 class="qBox" id="qBox"></h3>
 
 <!--input boxes-->
 <div class="answerInputs">
@@ -86,7 +86,7 @@
 
 <!--*******************************************************-->
 
-  <section class="leftSide"> <!--LEFT 1/3 of screen-->
+  <div class="leftSide"> <!--LEFT 1/3 of screen-->
 	
 	  <!--displays player 1 and 2 challenge-->
   
@@ -100,7 +100,7 @@
 
       <!--<button type="button" class="hideMe" onclick="checkAnswer()">P1 GO!</button>submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
-  </section>
+  </div>
 
 
 
@@ -110,7 +110,7 @@
 
 <!--****************************************************************-->
 
-  <section class="rightSide">
+  <div class="rightSide">
 
     <!--RIGHT 1/3 of board-->
  
@@ -127,13 +127,13 @@
        <!--<button type="button" class="hideMe" onclick="checkAnswerTwo()">P2 GO!</button>submits answer for check*****TEMP FOR TEST*********REMOVE******-->
 
 
-  </section>
+  </div>
 
-
-
-
-
-
+<!--<img class="floor" src="Assets/DuelingFloor.png">-->
+<div class='images'>
+  <img class="leftImg" src="Assets/DuelingLeft.png">
+  <img class="rightImg" src="Assets/DuelingRight.png">
+</div>
 
 
 
