@@ -1,45 +1,95 @@
+html{
+	height:100%;
+}
 body{
-	background-image: url('Assets/duelingSMBG.png');
-	background-position:center;
-	background-repeat: no-repeat;
-	background-size:cover; 
+	background-image: url('Assets/DuelBG.png');
+	background-position: center;
+	background-repeat:no-repeat; 
+	background-size: cover;
 	
 	z-index: -5;
+
 }
 
 img{
-	width:35%;
+	width:38%;
 	z-index: 3;
 }
 
 .leftImg{
-	float:left;
-	margin-left:20px;
-	padding-top:30px;
+	position:relative;
+	top:0px;
+	left:50px;
+	
+	
+	
 }
 
 
 .rightImg{
-	float:right;
-	margin-right:50px;
+	position:relative;
+	top:0px;
+	left:200px;
+	
+	padding-bottom:;
 }
 
 .images{
 	position:absolute;
-	width: 100%;
+	height:400px;
+	width:100%;
+	top:22%;
 	left:0;
-	top:21%;
 
+	
+	
+	
+	
+
+
+
+
+}
+
+.buttons{
+	height:45px;
+ 	width:100px;
+ 	margin:auto;
+}
+
+#startButton{
+	font-size: 25px;
+	margin-top: 43px;
+	height:100px;
+	width:100px;
+	background-color:rgba(48, 204, 92, 0.3);
+	border:none;
+	border-radius: 50%;
+}
+
+#resetButton{
+	font-size: 22px;
+	margin-top: 0px;
+	height:100px;
+	width:100px;
+	background-color:rgba(255, 238, 5, 0.3);
+	border:none;
+	border-radius: 50%;
 
 }
 
 .answerInputs{
-	width:;
+	float:center;
 	text-align: center;
-	margin-left:auto;
+	margin:auto;
+	margin-bottom: -100px;
+	z-index: 1;
+
 
 }
 #answerBox{
+	position: relative;
+	top:110px;
 	text-align: center;
 	font-size: 35px;
 	margin:25px;
@@ -50,6 +100,8 @@ img{
 }
 
 #answerBoxTwo{
+	position: relative;
+	top:110px;
 	text-align: center;
 	font-size: 35px;
 	margin:25px;
@@ -76,18 +128,8 @@ div.buttons{
 	text-align: center;
 	z-index: 2;
 }
- #startButton{
- 	height:50px;
- 	width:100px;
- 	margin:auto;
-}
 
-}
- #resetButton{
- 	height:50px;
- 	width:100px;
- 	margin:auto;
-}
+
 
 
 .hideMe{
@@ -106,13 +148,13 @@ div.buttons{
 .playerNameOne{
 	float:left;
 	margin-left: 20%;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 }
 
 .playerNameTwo{
 	float:right;
 	margin-right: 20%;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 }
 
 
@@ -123,10 +165,13 @@ div.buttons{
 
 
 .qBox{
+	position:absolute;
+	top:35%;
+	left:50%;
 	font-size: 50px;
 	text-align: center;
 	z-index: 2;
-	margin:10px;
+	
 
 }
 
@@ -201,8 +246,10 @@ div.buttons{
 	border-radius: 25px;
 	text-align: center;
 	margin-left:25%;
-	margin-top: 20%;
+	margin:auto;
+	margin-top: 10%;
+	padding-bottom:;
 	height:50px;
-	width:50%;
+	width:30%;
 	background-color: rgba(100,100,100,.2);
 }

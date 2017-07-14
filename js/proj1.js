@@ -1,7 +1,7 @@
 window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
 	//clearInterval(beginTimer);
-	//document.getElementById('resetButton').style.visibility = 'hidden';
+    document.getElementById('resetButton').style.visibility = 'hidden';
 	
 };
 
@@ -77,8 +77,8 @@ function timerPTwo(){
 function gameStart(){
   //document.getElementById('showQ').classList.toggle('hideMe',false);
   //document.getElementById('showQTwo').classList.toggle('hideMe', false);
- //* document.getElementById('answerBox').classList.toggle('hideMe',false);
- //* document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
+  document.getElementById('answerBox').classList.toggle('hideMe',false);
+  document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
  
   countOne();
   document.getElementById('startButton').style.visibility = 'hidden';
