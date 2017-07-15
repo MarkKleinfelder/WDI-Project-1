@@ -270,15 +270,18 @@ function winState(){
 function gameOver(){
 	resetButton();
 	if(pOneRounds > pTwoRounds){
+		rightImgLose();
 		document.getElementById("winner").innerHTML="Player 1 wins game!";
 		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
+		
 	}else{
+		leftImgLose();
 		document.getElementById("winner").innerHTML="Player 2 wins game!";
 		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
-	}
+		
 }
 
-
+}
 //--------------------TRY AGAIN FUNCTION----------------------//
 function tryAgain(){
 	console.log('tryAgain button working!')
@@ -297,18 +300,50 @@ function tryAgain(){
 	//pTwoTime = 0;
 	totalRounds = 0;
 
-	document.getElementById('winner').innerHTML='';
+	document.getElementById('winner').innerHTML='Your abilities as a warrior are beyond reproach.';
 	document.getElementById('resetButton').classList.toggle('hideMe', true)
 	document.getElementById('startButton').style.visibility = 'visible';
 	document.getElementById('rightArm').classList.toggle('rightArmRotating',false);
 	document.getElementById('leftArm').classList.toggle('leftArmRotating',false);
+	document.getElementById('pOnePointer').classList.toggle('hideMe',true);
+	document.getElementById('pTwoPointer').classList.toggle('hideMe',true);
+//--------resets left body---------------//
+	document.getElementById('left').classList.toggle('hideMe',false);
+	document.getElementById('leftArm').classList.toggle('hideMe',false);
+	document.getElementById('leftDead').classList.toggle('hideMe',true);
+	document.getElementById('leftDead').classList.toggle('killLeft',false);
+//------------resets right body---------//
+	document.getElementById('right').classList.toggle('hideMe',false);
+	document.getElementById('rightArm').classList.toggle('hideMe',false);
+	document.getElementById('rightDead').classList.toggle('hideMe',true);
+	document.getElementById('rightDead').classList.toggle('killRight',false);
 }
-function leftImgLose(){
-	document.getElementById('left').classList.toggle('leftImgLose',true);
-}
-function armsUp(){
-	document.getElementById('rightArm').classList.toggle('rightArmRotating',false);
-	document.getElementById('leftArm').classList.toggle('leftArmRotating',false);
 
+
+//----------------------losing image transitions-------------------//
+function leftImgLose(){
+	document.getElementById('left').classList.toggle('hideMe',true);
+	document.getElementById('leftArm').classList.toggle('hideMe',true);
+	document.getElementById('leftDead').classList.toggle('hideMe',false);
+	setTimeout(function(){
+	document.getElementById('leftDead').classList.toggle('killLeft',true);
+}, 200);
+};
+
+function rightImgLose(){
+	document.getElementById('right').classList.toggle('hideMe',true);
+	document.getElementById('rightArm').classList.toggle('hideMe',true);
+	document.getElementById('rightDead').classList.toggle('hideMe',false);
+	setTimeout(function(){
+	document.getElementById('rightDead').classList.toggle('killRight',true);
+}, 200);
+};
+
+
+
+//-------test functions-----------//
+function armsUp(){
+		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
+		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
 }
 

@@ -2,89 +2,28 @@ html{
 	height:100%;
 }
 body{
+	max-width: 1280px;
 	font-family:"Pinyon Script", sans-serif;
 	background-image: url('Assets/DuelBG.png');
 	background-position: center;
 	background-repeat:no-repeat; 
 	background-size: cover;
-	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x:hidden;
 	z-index: -5;
 
 }
 
-img{
+.makeSmall{
 	width:38%;
 	z-index: 1;
 }
 
-.leftImg{
-	position:relative;
-	top:0px;
-	left:50px;
-	transition: transform 1s ease-in, top 1s linear;
-}
 
-
-.rightImg{
-	position:relative;
-	top:0px;
-	left:200px;
-	
-	padding-bottom:;
-}
-
-.images{
-	position:absolute;
-	height:400px;
-	width:100%;
-	top:22%;
-	left:0;
-
-
-}
-
-.leftImgLose{
-	transform: rotate(-90deg);
-	top:150px;
-}
-.rightImgLose{
-
-}
 
 .arms{
 	z-index: 5;
-	
-
 }
-
-.left{
-	position:absolute;
-	top:112px;
-	left:49px;
-	transform: rotate(60deg);
-	transition: transform .5s ease-out;
-	z-index: 10;
-	
-}
-
-.leftArmRotating{
-	transform: rotate(-5deg);
-}
-
-.right{
-	position:absolute;
-	top:116px;
-	left:730px;
-	transform: rotate(-60deg);
-	transition: transform .5s ease-out;
-	z-index: 10;
-}
-
-.rightArmRotating{
-	transform:rotate(3deg);
-}
-
-
 
 .buttons{
 	height:45px;
@@ -122,6 +61,7 @@ img{
 	z-index: 1;
 
 
+
 }
 #answerBox{
 	position: relative;
@@ -133,6 +73,8 @@ img{
 	width: 45px;
 	background:transparent;
 	border-radius: 25px;
+	animation: fadein 1s;
+	z-index: 20;
 }
 
 #answerBoxTwo{
@@ -145,6 +87,8 @@ img{
 	width: 45px;
 	background:transparent;
 	border-radius: 25px;
+	animation: fadein 1s;
+	z-index: 20;
 }
 
 .backGround{
@@ -165,13 +109,66 @@ div.buttons{
 	z-index: 2;
 }
 
-
-
+.floorImg{
+	position:relative;
+	width:100%;
+	bottom:50px;
+	z-index: -5px;
+}
 
 .hideMe{
 	display:none;
+
+}
+
+.images{
+	position:absolute;
+	height:400px;
+	top:168px;
+	left:0;
+}
+
+
+.leftImg{  /*--------left body--------*/
+	position:relative;
+	top:0px;
+	left:50px;
+	/*transition: transform .5s ease-in, top .5s linear;
+	transition-delay: .25s;----*/
+	z-index: 5;
+}
+
+.left{    /*-----------left arm--------*/
+	position:absolute;
+	top:112px;
+	left:49px;
+	transform: rotate(60deg);
+	transition: transform .25s ease-out; /*--.25s ease-out for arm lift--*/
+	z-index: 10;
+}
+/*--------.leftImgLose{  ----left body fall----
+	transform: rotate(-80deg);
+	top:200px;
+}-----*/
+
+.leftArmRotating{ /*-----transform: rotate(-5deg);-----arm lift fire---------*/
+	transform:rotate(-5deg);
 	
-	
+}
+
+.leftImgDead{	
+	position:relative;
+	top:0px;
+	left:50px;
+	transition: transform .5s ease-in, top .5s linear;
+	transition-delay: .25s;
+	z-index: 5;
+	margin:0;
+}
+
+.killLeft{
+	transform: rotate(-80deg);
+	top:200px
 }
 
 /*.leftSide{
@@ -210,9 +207,10 @@ div.buttons{
 	bottom:10px;
 	float:left;
 	margin-left:20px;
-	height:35px;
+	height:40px;
 	width:100px;
 	transform: scaleX(-1);
+	animation: fadein .5s;
 }
 
 .pointerRight{
@@ -220,8 +218,9 @@ div.buttons{
 	bottom:10px;
 	float:right;
 	margin-right:20px;
-	height:35px;
+	height:40px;
 	width:100px;
+	animation: fadein .5s;
 }
 
 .questionBoxDiv{
@@ -231,6 +230,7 @@ div.buttons{
 	height:100px;
 	width:100px;
 	border-radius: 50px;
+
 	
 }
 .qBox{
@@ -238,10 +238,46 @@ div.buttons{
 	font-size: 55px;
 	text-align:center;
 	z-index: 2;
-	
-
 }
 
+.rightImg{   /*--------right body---------*/
+	position:relative;
+	top:0px;
+	left:200px;
+	z-index: 5;
+}
+
+.rightImgDead{
+	position:relative;
+	top:0px;
+	left:200px;
+	transition: transform .5s ease-in, top .5s linear, left .25s ease-out;
+	transition-delay: .25s;
+	z-index: 5;
+	margin:0;
+}
+
+.killRight{
+	transform: rotate(-90deg);
+	top:290px;
+	left:100px;
+}
+
+
+.right{  /*-----------right arm-----------*/
+	position:absolute;
+	top:113px;
+	left:722px;
+	transform: rotate(-60deg);
+	transition: transform .25s ease-out;
+	z-index: 10;
+}
+
+
+
+.rightArmRotating{
+	transform:rotate(3deg);
+}
 
 
 .roundsBoxOne{
@@ -265,21 +301,15 @@ div.buttons{
 .roundsPOne{
 	font-size: 20px;
 	color:red;
-	
-	
-
-	
 }
 
 .roundsPTwo{
 	font-size:20px;
 	color:blue;
-	
-	
 }
+
+
 .scoreBoxes{
-	
-	
 }
 
 .scoreBoxOne{
@@ -301,11 +331,10 @@ div.buttons{
 .winnerBox{
 	border-radius: 25px;
 	text-align: center;
-	margin-left:25%;
 	margin:auto;
 	margin-top:60px;
 	height:50px;
-	width:30%;
+	width:800px;
 	background-color:;
 }
 
@@ -313,8 +342,7 @@ div.buttons{
 
 /*--------------animations-----------*/
 
-@keyframes leftArmRotate {
-	0% {}
-	90% {}
-	100% {}
+@keyframes fadein {
+	from{opacity:0;}
+	to{opacity:1;}
 }
