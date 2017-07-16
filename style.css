@@ -123,6 +123,39 @@ div.buttons{
 	z-index: -5px;
 }
 
+#squish{
+	margin:0px;
+	position:absolute;
+	top:0px;
+	overflow:hidden;
+	z-index: 50;
+	
+}
+
+.squishMoveRight{
+	left:600px;
+
+}
+
+.foot{
+	position:relative;
+	height:715px;
+	width:625px;
+	bottom:780px;
+	transition: bottom .25s linear;
+}
+
+
+
+.pOneSquish{
+	bottom:0px;
+}
+
+.pTwoSquish{
+	bottom:0px;
+
+}
+
 .hideMe{
 	display: none;
 	
@@ -168,7 +201,7 @@ div.buttons{
 	position:relative;
 	top:0px;
 	left:50px;
-	transition: transform .5s ease-in, top .5s linear;
+	transition: transform .5s ease-in, top .5s linear, height .35s linear;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
@@ -176,7 +209,15 @@ div.buttons{
 
 .killLeft{
 	transform: rotate(-80deg);
-	top:200px
+	top:200px;
+}
+
+.squishLeft{
+	height:75px;
+}
+
+.squishRight{
+	height:75px;
 }
 
 /*.leftSide{

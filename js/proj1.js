@@ -280,14 +280,29 @@ function winState(){
    }else if (totalRounds < 5){
    	countOne();
    }
-
-
-}
+};
 
 function gameOver(){
-	document.getElementById('clock').classList.toggle('hideMe',true);
-	resetButton();
-	if(pOneRounds > pTwoRounds){
+  document.getElementById('clock').classList.toggle('hideMe',true);
+  resetButton();
+  if(pOneScore>= pTwoScore*1.2){
+    /*function squishOne()*/
+    console.log("player one squished")
+  }else if(pOneRounds > pTwoRounds){
+    document.getElementById("winner").innerHTML="Player 1 wins game!";
+	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
+    console.log('player one wins by rounds')
+}
+  if (pTwoTimer >= pOneTimer*1.2){
+    /*function squishTwo()*/
+    console.log('player two squished')
+  }else if( pTwoRounds > pOneRounds){
+     document.getElementById("winner").innerHTML="Player 2 wins game!";
+	 document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
+     console.log('player two wins by rounds')
+}
+
+    /*if(pOneRounds > pTwoRounds){
 		rightImgLose();
 		document.getElementById("winner").innerHTML="Player 1 wins game!";
 		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
@@ -297,9 +312,9 @@ function gameOver(){
 		document.getElementById("winner").innerHTML="Player 2 wins game!";
 		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
 		
+} -----------*******Original gameOver check********-------*/
 }
 
-}
 //--------------------TRY AGAIN FUNCTION----------------------//
 function tryAgain(){
 	difficulty=1;
@@ -372,6 +387,32 @@ function stopWatchStart(){
 function stopWatchStop(){
 	document.getElementById('millisecHand').classList.toggle('animationPause',true);
 	document.getElementById('secHand').classList.toggle('animationPause',true);
+
+}
+
+
+//--------squish functions--------//
+
+function squishOne(){
+	document.getElementById('left').classList.toggle('hideMe',true);
+	document.getElementById('leftArm').classList.toggle('hideMe',true);
+	document.getElementById('leftDead').classList.toggle('hideMe',false);
+	document.getElementById('footDown').classList.toggle('pOneSquish',true);
+	setTimeout(function(){
+		document.getElementById('leftDead').classList.toggle('squishLeft',true);
+}, 200);
+}
+
+
+function squishTwo(){
+	document.getElementById('right').classList.toggle('hideMe',true);
+	document.getElementById('rightArm').classList.toggle('hideMe',true);
+	document.getElementById('rightDead').classList.toggle('hideMe',false);
+	document.getElementById('squish').classList.toggle('squishMoveRight',true);
+	document.getElementById('footDown').classList.toggle('pTwoSquish',true);
+	setTimeout(function(){
+	document.getElementById('rightDead').classList.toggle('squishRight',true);
+}, 200);
 
 }
 
