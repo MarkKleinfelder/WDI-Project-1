@@ -302,7 +302,8 @@ function gameOver(){
 }
 //--------------------TRY AGAIN FUNCTION----------------------//
 function tryAgain(){
-	console.log('tryAgain button working!')
+	difficulty=1;
+	console.log('tryAgain button working!');
 	document.getElementById('pOneRounds').innerHTML = '';
 	document.getElementById('pOneScore').innerHTML = '';
 	//document.getElementById('pOneWins').innerHTML = '';

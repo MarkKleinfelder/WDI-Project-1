@@ -4,7 +4,7 @@ html{
 body{
 	max-width: 1280px;
 	font-family:"Pinyon Script", sans-serif;
-	background-image: url('Assets/DuelBG.png');
+	background-image: url('Assets/DuelBG2.png');
 	background-position: center;
 	background-repeat:no-repeat; 
 	background-size: cover;
@@ -41,6 +41,7 @@ body{
 	background-color:rgba(48, 204, 92, 0.3);
 	border:none;
 	border-radius: 50%;
+	animation: fadein 1s;
 }
 
 #resetButton{
@@ -52,6 +53,7 @@ body{
 	border:none;
 	border-radius: 50%;
 	z-index: 10;
+	animation: fadein 2s;
 
 }
 
@@ -65,10 +67,11 @@ body{
 
 }
 #answerBox{
+	font-family: VictorianParlor;
 	position: relative;
 	top:20px;
 	text-align: center;
-	font-size: 35px;
+	font-size: 30px;
 	margin:25px;
 	height: 45px;
 	width: 45px;
@@ -79,10 +82,11 @@ body{
 }
 
 #answerBoxTwo{
+	font-family: VictorianParlor;
 	position: relative;
 	top:20px;
 	text-align: center;
-	font-size: 35px;
+	font-size: 30px;
 	margin:25px;
 	height: 45px;
 	width: 45px;
@@ -120,7 +124,8 @@ div.buttons{
 }
 
 .hideMe{
-	display:none;
+	display: none;
+	
 
 }
 
@@ -249,6 +254,7 @@ div.buttons{
 	top:0px;
 	left:225px;
 	z-index: 5;
+
 }
 
 .rightImgDead{
@@ -354,6 +360,7 @@ div.buttons{
 	height:160px;
 	width:160px;
 	z-index: 99;
+	animation: fadein 3s;
 }
 
 .clock.simple:after{
@@ -447,3 +454,7 @@ div.buttons{
 	from{opacity:0;}
 	to{opacity:1;}
 }
+
+
+
+
