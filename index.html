@@ -5,7 +5,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Rouge+Script" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <style>@font-face{font-family:VictorianParlor; src:url('assets/VictorianParlor.ttf');}</style>
 <body>
+
+
+
+<article class='clock' id="clock">
+  <div id='secHand' class='seconds-container'>
+    <div class='seconds'></div>
+  </div>
+
+  <div id='millisecHand' class='milliseconds-container'>
+    <div class='milliseconds'></div>
+  </div>
+</article>
 
 <h1 class="backGround" id="pOneTimer"></h1>
 <h1 class="backGround" id="pTwoTimer"></h1>
@@ -38,11 +51,11 @@
 
 <!--start tryAgain buttons-->
 <div class="buttons">
-  <button type="button" onClick="gameStart()" id="startButton">START</button>
+  <button type="button" onClick="gameStart()" id="startButton">Start</button>
 </div>
 
 <div class="buttons">
-  <button type="button" onClick="tryAgain()" id="resetButton">TRY AGAIN?</button>
+  <button type="button" onClick="tryAgain()" id="resetButton">Try Again?</button>
 </div>
 <!---players-->
 <div class="playerNames">

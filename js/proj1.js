@@ -2,6 +2,9 @@ window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
 	//clearInterval(beginTimer);
     document.getElementById('resetButton').classList.toggle('hideMe',true);
+    document.getElementById('clock').classList.toggle('hideMe',true);
+    document.getElementById('millisecHand').classList.toggle('milliseconds-container-animate',false);
+	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	
 };
 
@@ -9,13 +12,19 @@ window.onload = function ready(){
 
 var char = "abcdefghijklmnopqrstuvwxyz1234567890";
 var question = "";
+var difficulty = 1;
 
 function makeChar(){
-  for(var i=0; i < char.length; i++){
-  	question = char.charAt(Math.floor(Math.random()*char.length));
+	question = '';
+  for(var i=0; i < difficulty; i++){
+  	question += char.charAt(Math.floor(Math.random()*char.length));
   }
+};
 
-}
+function addDifficulty(){
+	question = '';
+	difficulty += 1;
+};
 
 //-------------PLAYER COUNTDOWN TIMER DISPLAYS---------------//
 
@@ -65,6 +74,7 @@ function timerPOne(){
   	document.getElementById('answerBox').focus();
   	document.getElementById('pOnePointer').classList.toggle('hideMe',false);
 
+
   	}
 
 //-------p2 start-----//
@@ -82,6 +92,7 @@ function gameStart(){
   document.getElementById('answerBox').classList.toggle('hideMe',false);
   document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
  
+  document.getElementById('clock').classList.toggle('hideMe',false);
   countOne();
   document.getElementById('startButton').style.visibility = 'hidden';
 };
@@ -106,6 +117,7 @@ var pOneTimer;
 
 function pOneBegin(){
     setQ();
+    stopWatchStart();
     pOneTimer = setInterval(function(){
       pOneTime++;
       document.getElementById('pOneTimer').innerHTML = pOneTime;
@@ -117,6 +129,7 @@ function pOneStop(){
 	document.getElementById('pOneScore').innerHTML = pOneScore;
 	console.log('button working');
 	countTwo();
+	stopWatchStop();
 };
 
 
@@ -129,15 +142,18 @@ var pTwoTimer;
 function pTwoBegin(){
 	//document.getElementById('answerBoxTwo').focus();
 	setQTwo();
+	stopWatchStart();
     pTwoTimer = setInterval(function(){
 		pTwoTime++;
 		document.getElementById('pTwoTimer').innerHTML = pTwoTime;
  }, 50);
 }
 function pTwoStop(){
+	stopWatchStop();
 	clearInterval(pTwoTimer);
 	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
+	addDifficulty();
 	//document.getElementById('winner').innerHTML = "";
 	//resetButton();
 	//countOne();
@@ -163,6 +179,7 @@ var challenge = document.getElementById('qBox');
 
 function checkAnswer(){
 	console.log('checking answer. Thanks!');
+	if (answer.value.length >= pOneQ.length){
 	if(answer.value == pOneQ){
 		console.log('Correct!');
 		challenge.innerHTML = '';
@@ -177,6 +194,7 @@ function checkAnswer(){
 		console.log('wrong');
 		document.getElementById('answerBox').value = '';
 	}
+}
 };
 
 
@@ -199,6 +217,7 @@ var challengeTwo = document.getElementById('qBox'); //<---changed from qBoxTwo--
 
 function checkAnswerTwo(){
 	console.log('checking answer 2. Thanks!');
+	if (answerTwo.value.length >= pTwoQ.length){
 	if(answerTwo.value == pTwoQ){
 		console.log('P2 Correct!');
 		challengeTwo.innerHTML = '';
@@ -214,6 +233,7 @@ function checkAnswerTwo(){
 		console.log('P2 wrong');
 		document.getElementById('answerBoxTwo').value = '';
 	}
+}
 };
 
 //----------------WIN STATE-----------------//
@@ -225,8 +245,6 @@ var totalRounds = 0;
 function winState(){
 	 if(pOneTime < pTwoTime){
 		document.getElementById("winner").innerHTML="Player 1 wins round!";
-		
-
 		pOneRounds += 1;
 		totalRounds = pOneRounds + pTwoRounds;
 		document.getElementById('pOneRounds').textContent += "X ";
@@ -240,7 +258,6 @@ function winState(){
     	}, 2000);
 	    }else{
 		  document.getElementById("winner").innerHTML="Player 2 wins round!";
-		  
 		  pTwoRounds += 1;
 		  totalRounds = pOneRounds + pTwoRounds;
     	  document.getElementById("pTwoRounds").textContent += "X ";
@@ -268,6 +285,7 @@ function winState(){
 }
 
 function gameOver(){
+	document.getElementById('clock').classList.toggle('hideMe',true);
 	resetButton();
 	if(pOneRounds > pTwoRounds){
 		rightImgLose();
@@ -340,6 +358,21 @@ function rightImgLose(){
 };
 
 
+//-----------------stop watch start stop functions------//
+
+function stopWatchStart(){
+	document.getElementById('millisecHand').classList.toggle('milliseconds-container-animate',true);
+	document.getElementById('secHand').classList.toggle('seconds-container-animate',true);
+    document.getElementById('millisecHand').classList.toggle('animationPause',false);
+	document.getElementById('secHand').classList.toggle('animationPause',false);
+
+}
+
+function stopWatchStop(){
+	document.getElementById('millisecHand').classList.toggle('animationPause',true);
+	document.getElementById('secHand').classList.toggle('animationPause',true);
+
+}
 
 //-------test functions-----------//
 function armsUp(){
