@@ -29,7 +29,7 @@ body{
 	height:45px;
  	width:100px;
  	margin:auto;
- 	z-index: 5;
+ 	z-index: 85;
 }
 
 #startButton{
@@ -52,7 +52,7 @@ body{
 	background-color:rgba(255, 238, 5, 0.3);
 	border:none;
 	border-radius: 50%;
-	z-index: 10;
+	z-index: 90;
 	animation: fadein 2s;
 
 }
@@ -128,7 +128,7 @@ div.buttons{
 	position:absolute;
 	top:0px;
 	overflow:hidden;
-	z-index: 50;
+	z-index: 10;
 	
 }
 
@@ -143,6 +143,7 @@ div.buttons{
 	width:625px;
 	bottom:780px;
 	transition: bottom .25s linear;
+	z-index: 10;
 }
 
 
@@ -164,9 +165,10 @@ div.buttons{
 
 .images{
 	position:absolute;
-	height:400px;
+	height:600px;
 	top:168px;
 	left:0;
+	overflow-x: hidden;
 }
 
 
@@ -201,10 +203,14 @@ div.buttons{
 	position:relative;
 	top:0px;
 	left:50px;
-	transition: transform .5s ease-in, top .5s linear, height .35s linear;
+	transition: transform .5s ease-in, top .5s linear, height .35s linear,left .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
+}
+ 
+.pOneEscape{
+  left: -400px;
 }
 
 .killLeft{
@@ -279,6 +285,7 @@ div.buttons{
 	height:90px;
 	width:170px;
 	border-radius: 50px;
+	z-index: 99;
 
 	
 }
@@ -287,7 +294,7 @@ div.buttons{
 	margin-top: 15px;
 	font-size: 65px;
 	text-align:center;
-	z-index: 2;
+	z-index: 55;
 }
 
 .rightImg{   /*--------right body---------*/
@@ -301,11 +308,17 @@ div.buttons{
 .rightImgDead{
 	position:relative;
 	top:0px;
+	right:0px;
 	left:225px;
-	transition: transform .5s ease-in, top .5s linear, left .5s ease-out;
+	transition: transform .5s ease-in, top .5s linear, left .5s ease-out, right .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
+}
+
+.pTwoEscape{
+	left:750px;
+
 }
 
 .killRight{
@@ -368,8 +381,27 @@ div.buttons{
 
 .scoreBoxTwo{
 	display:none;
+}
+
+.tooSlowOne{
+	width:200px;
+	font-size:45px;
+	position:relative;
+	top:-135px;
+	left:150px;
+	animation: fadein 2s;
 	
 }
+
+.tooSlowTwo{
+	width:200px;
+	font-size: 45px;
+	position:relative;
+	top:-135px;
+	left:910px;
+	animation: fadein 2s;
+}
+
 
 #winner{
 	font-family:VictorianParlor;
@@ -398,8 +430,8 @@ div.buttons{
 	border-radius: 50%;
 	background:url('assets/watch1.png') no-repeat center;
 	background-size: 88%;
-	height:160px;
-	width:160px;
+	height:165px;
+	width:165px;
 	z-index: 99;
 	animation: fadein 3s;
 }

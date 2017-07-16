@@ -5,7 +5,8 @@ window.onload = function ready(){
     document.getElementById('clock').classList.toggle('hideMe',true);
     document.getElementById('millisecHand').classList.toggle('milliseconds-container-animate',false);
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
-	
+	document.getElementById('slowOne').classList.toggle('hideMe',true)
+	document.getElementById('slowTwo').classList.toggle('hideMe',true)
 };
 
 //--------------------CHARACTER (QUESTION) GENERATOR--------------//
@@ -273,6 +274,8 @@ function winState(){
       }if(totalRounds === 5){ //----checks game over condition---//
       	 document.getElementById('pOneTimer').innerHTML = '';
 	     document.getElementById('pTwoTimer').innerHTML = '';
+	     document.getElementById('pOnePointer').classList.toggle('hideMe',true);
+	     document.getElementById('pTwoPointer').classList.toggle('hideMe',true);
 			  pOneTime = 0;
 			  pTwoTime = 0;
 		gameOver();
@@ -285,8 +288,9 @@ function winState(){
 function gameOver(){
   document.getElementById('clock').classList.toggle('hideMe',true);
   resetButton();
-  if(pOneScore >= pTwoScore*1.2){
+  if(pOneScore >= pTwoScore*1.2 && pOneRounds > pTwoRounds){
     squishOne();
+    document.getElementById("winner").innerHTML="Too Slow!";
     console.log("player one squished")
   }else if(pOneRounds > pTwoRounds){
   	rightImgLose();
@@ -294,8 +298,9 @@ function gameOver(){
 	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
     console.log('player one wins by rounds')
 }
-  if (pTwoScore >= pOneScore*1.2){
+  if (pTwoScore >= pOneScore*1.2 && pTwoRounds > pOneRounds){
   	squishTwo();
+  	document.getElementById("winner").innerHTML="Too Slow!";
     console.log('player two squished')
   }else if( pTwoRounds > pOneRounds){
   	 leftImgLose();
@@ -360,7 +365,9 @@ function tryAgain(){
     
 	document.getElementById('footDown').classList.toggle('pTwoSquish',false);
     document.getElementById('rightDead').classList.toggle('squishRight',false);
-
+//--------------resets escape---------//
+    document.getElementById('rightDead').classList.toggle('pTwoEscape',false);
+    document.getElementById('leftDead').classList.toggle('pOneEscape',false);
 
 }
 
@@ -405,25 +412,35 @@ function stopWatchStop(){
 //--------squish functions--------//
 
 function squishOne(){
-	document.getElementById('squish').classList.toggle('squishMoveRight',false);
+	document.getElementById('right').classList.toggle('hideMe',true);
+	document.getElementById('rightArm').classList.toggle('hideMe',true);
+	document.getElementById('rightDead').classList.toggle('hideMe',false);
 	document.getElementById('left').classList.toggle('hideMe',true);
 	document.getElementById('leftArm').classList.toggle('hideMe',true);
 	document.getElementById('leftDead').classList.toggle('hideMe',false);
+	document.getElementById('squish').classList.toggle('squishMoveRight',false);
 	document.getElementById('footDown').classList.toggle('pOneSquish',true);
 	setTimeout(function(){
+		document.getElementById('rightDead').classList.toggle('pTwoEscape',true);
 		document.getElementById('leftDead').classList.toggle('squishLeft',true);
+		document.getElementById('slowTwo').classList.toggle('hideMe',false);
 }, 200);
 }
 
 
 function squishTwo(){
+	document.getElementById('left').classList.toggle('hideMe',true);
+	document.getElementById('leftArm').classList.toggle('hideMe',true);
+	document.getElementById('leftDead').classList.toggle('hideMe',false);
 	document.getElementById('right').classList.toggle('hideMe',true);
 	document.getElementById('rightArm').classList.toggle('hideMe',true);
 	document.getElementById('rightDead').classList.toggle('hideMe',false);
 	document.getElementById('squish').classList.toggle('squishMoveRight',true);
 	document.getElementById('footDown').classList.toggle('pTwoSquish',true);
 	setTimeout(function(){
-	document.getElementById('rightDead').classList.toggle('squishRight',true);
+	  document.getElementById('leftDead').classList.toggle('pOneEscape',true);
+	  document.getElementById('rightDead').classList.toggle('squishRight',true);
+	  document.getElementById('slowOne').classList.toggle('hideMe',false);
 }, 200);
 
 }
