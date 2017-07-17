@@ -7,7 +7,15 @@ window.onload = function ready(){
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	document.getElementById('slowOne').classList.toggle('hideMe',true)
 	document.getElementById('slowTwo').classList.toggle('hideMe',true)
+  
+	
 };
+
+
+
+
+
+
 
 //--------------------CHARACTER (QUESTION) GENERATOR--------------//
 
@@ -49,11 +57,13 @@ function countTwo(){
 }
 //----ready message p1----//**changed from countDownDisplay to 'winner'**//
 function timerPOneReady(){
-	document.getElementById('winner').innerHTML = "player 1 ready";
+	var oneName=document.getElementById('p1Name').value;
+	document.getElementById('winner').innerHTML = "Ready " + oneName;
 }
 //----ready message p2---//
 function timerPTwoReady(){
-	document.getElementById('winner').innerHTML = "player 2 ready";
+	var twoName=document.getElementById('p2Name').value;
+	document.getElementById('winner').innerHTML = "Ready " + twoName;
 }
 
 function timerThree(){
@@ -412,6 +422,8 @@ function stopWatchStop(){
 //--------squish functions--------//
 
 function squishOne(){
+	document.getElementById('answerBox').classList.toggle('hideMe',true);
+    document.getElementById('answerBoxTwo').classList.toggle('hideMe',true);
 	document.getElementById('right').classList.toggle('hideMe',true);
 	document.getElementById('rightArm').classList.toggle('hideMe',true);
 	document.getElementById('rightDead').classList.toggle('hideMe',false);
@@ -429,6 +441,8 @@ function squishOne(){
 
 
 function squishTwo(){
+	 document.getElementById('answerBox').classList.toggle('hideMe',true);
+    document.getElementById('answerBoxTwo').classList.toggle('hideMe',true);
 	document.getElementById('left').classList.toggle('hideMe',true);
 	document.getElementById('leftArm').classList.toggle('hideMe',true);
 	document.getElementById('leftDead').classList.toggle('hideMe',false);
