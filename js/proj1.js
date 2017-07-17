@@ -7,12 +7,15 @@ window.onload = function ready(){
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	document.getElementById('slowOne').classList.toggle('hideMe',true)
 	document.getElementById('slowTwo').classList.toggle('hideMe',true)
-  
+    document.getElementById('answerBox').classList.toggle('hideMe',false);
+  document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
 	
 };
 
 
-
+//check answer input placement after foot
+//change player 1/2 names for messages
+//move round 'x' down
 
 
 
