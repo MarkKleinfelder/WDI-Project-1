@@ -7,7 +7,9 @@ window.onload = function ready(){
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	document.getElementById('slowOne').classList.toggle('hideMe',true)
 	document.getElementById('slowTwo').classList.toggle('hideMe',true)
-	
+	//document.getElementById('answerBox').classList.toggle('hideMe',false);
+    //document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
+
 };
 
 
@@ -103,10 +105,10 @@ function gameStart(){
   //document.getElementById('showQTwo').classList.toggle('hideMe', false);
   document.getElementById('answerBox').classList.toggle('hideMe',false);
   document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
- 
   document.getElementById('clock').classList.toggle('hideMe',false);
-  countOne();
   document.getElementById('startButton').style.visibility = 'hidden';
+  document.getElementById('answerBoxes').classList.toggle("answerInputs",true)
+  countOne();
 };
 
 //-------------------TRY AGAIN BUTTON APPEAR---------------------//
@@ -308,18 +310,18 @@ function gameOver(){
   }else if(pOneRounds > pTwoRounds){
   	rightImgLose();
   	var oneName=document.getElementById('p1Name').value;
-    document.getElementById("winner").innerHTML= oneName + " wins game!";
+    document.getElementById("winner").innerHTML= oneName + " wins the game!";
 	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
     console.log('player one wins by rounds')
 }
   if (pTwoScore >= pOneScore*1.2 && pTwoRounds > pOneRounds){
   	squishTwo();
-  	document.getElementById("winner").innerHTML="Too Slow!";
+  	document.getElementById("winner").innerHTML="";
     console.log('player two squished')
   }else if( pTwoRounds > pOneRounds){
   	 leftImgLose();
   	 var twoName=document.getElementById('p2Name').value;
-     document.getElementById("winner").innerHTML=twoName + " wins game!";
+     document.getElementById("winner").innerHTML=twoName + " wins the game!";
 	 document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
      console.log('player two wins by rounds')
 }
@@ -384,6 +386,10 @@ function tryAgain(){
     document.getElementById('rightDead').classList.toggle('pTwoEscape',false);
     document.getElementById('leftDead').classList.toggle('pOneEscape',false);
 
+ //------------resets "too slow"-----//
+    document.getElementById('slowOne').classList.toggle('hideMe',true)
+	document.getElementById('slowTwo').classList.toggle('hideMe',true)
+
 }
 
 
@@ -435,7 +441,7 @@ function squishOne(){
 	document.getElementById('left').classList.toggle('hideMe',true);
 	document.getElementById('leftArm').classList.toggle('hideMe',true);
 	document.getElementById('leftDead').classList.toggle('hideMe',false);
-	document.getElementById('footDown').classList.toggle('squishMoveRight',false);
+	document.getElementById('squish').classList.toggle('squishMoveRight',false);
 	document.getElementById('footDown').classList.toggle('pOneSquish',true);
 	setTimeout(function(){
 		document.getElementById('rightDead').classList.toggle('pTwoEscape',true);
@@ -446,7 +452,7 @@ function squishOne(){
 
 
 function squishTwo(){
-	 document.getElementById('answerBox').classList.toggle('hideMe',true);
+	document.getElementById('answerBox').classList.toggle('hideMe',true);
     document.getElementById('answerBoxTwo').classList.toggle('hideMe',true);
 	document.getElementById('left').classList.toggle('hideMe',true);
 	document.getElementById('leftArm').classList.toggle('hideMe',true);
@@ -454,7 +460,7 @@ function squishTwo(){
 	document.getElementById('right').classList.toggle('hideMe',true);
 	document.getElementById('rightArm').classList.toggle('hideMe',true);
 	document.getElementById('rightDead').classList.toggle('hideMe',false);
-	document.getElementById('footDown').classList.toggle('squishMoveRight',true);
+	document.getElementById('squish').classList.toggle('squishMoveRight',true);
 	document.getElementById('footDown').classList.toggle('pTwoSquish',true);
 	setTimeout(function(){
 	  document.getElementById('leftDead').classList.toggle('pOneEscape',true);
