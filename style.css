@@ -4,7 +4,7 @@ html{
 body{
 	max-width: 1280px;
 	font-family:"Pinyon Script", sans-serif;
-	background-image: url('Assets/DuelBG2.png');
+	background-image: url('assets/DuelBG2.png');
 	background-position: center;
 	background-repeat:no-repeat; 
 	background-size: cover;
