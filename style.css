@@ -59,12 +59,12 @@ body{
 }
 
 .answerInputs{
-	position:relative;
+	position:absolute;
 	top:525;
-	left: 535px;
+	left: 542px;
 	width:250px;
 	height:100px;
-	z-index: 60;
+	z-index: 99;
 }
 
 
@@ -123,7 +123,7 @@ div.buttons{
 	bottom:50px;
 	z-index: -5px;
 }
-
+/*
 #squish{
 	margin:0px;
 	position:absolute;
@@ -132,12 +132,28 @@ div.buttons{
 	z-index: 10;
 	
 }
+*/
 
+#squish{
+	overflow:hidden;
+	
+}
+
+.foot{
+	position:absolute;
+	height:715px;
+	width:625px;
+	bottom:800px;
+	left:0;
+	transition:bottom .25s linear;
+	z-index: 45;
+}
 .squishMoveRight{
 	left:600px;
 
 }
 
+/*
 .foot{
 	position: relative;
 	height:715px;
@@ -146,15 +162,15 @@ div.buttons{
 	transition: bottom .25s linear;
 	z-index: 10;
 }
-
+*/
 
 
 .pOneSquish{
-	bottom:0px;
+	bottom:10px;
 }
 
 .pTwoSquish{
-	bottom:0px;
+	bottom:10px;
 
 }
 
@@ -367,14 +383,14 @@ div.buttons{
 
 .roundsBoxOne{
 	position:absolute;
-	top:115px;
+	top:125px;
 	left:250px;
 	
 }
 
 .roundsBoxTwo{
 	position:absolute;
-	top:115px;
+	top:125px;
 	right:280px;
 
 }

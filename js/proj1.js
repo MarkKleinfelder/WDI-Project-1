@@ -7,8 +7,6 @@ window.onload = function ready(){
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	document.getElementById('slowOne').classList.toggle('hideMe',true)
 	document.getElementById('slowTwo').classList.toggle('hideMe',true)
-    document.getElementById('answerBox').classList.toggle('hideMe',false);
-  document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
 	
 };
 
@@ -258,7 +256,8 @@ var totalRounds = 0;
 
 function winState(){
 	 if(pOneTime < pTwoTime){
-		document.getElementById("winner").innerHTML="Player 1 wins round!";
+	 	var oneName=document.getElementById('p1Name').value;
+		document.getElementById("winner").innerHTML= oneName + " wins round!";
 		pOneRounds += 1;
 		totalRounds = pOneRounds + pTwoRounds;
 		document.getElementById('pOneRounds').textContent += "X ";
@@ -271,7 +270,8 @@ function winState(){
 			
     	}, 2000);
 	    }else{
-		  document.getElementById("winner").innerHTML="Player 2 wins round!";
+	      var twoName=document.getElementById('p2Name').value;
+		  document.getElementById("winner").innerHTML= twoName + " wins round!";
 		  pTwoRounds += 1;
 		  totalRounds = pOneRounds + pTwoRounds;
     	  document.getElementById("pTwoRounds").textContent += "X ";
@@ -303,11 +303,12 @@ function gameOver(){
   resetButton();
   if(pOneScore >= pTwoScore*1.2 && pOneRounds > pTwoRounds){
     squishOne();
-    document.getElementById("winner").innerHTML="Too Slow!";
+    //document.getElementById("winner").innerHTML="Too Slow!";
     console.log("player one squished")
   }else if(pOneRounds > pTwoRounds){
   	rightImgLose();
-    document.getElementById("winner").innerHTML="Player 1 wins game!";
+  	var oneName=document.getElementById('p1Name').value;
+    document.getElementById("winner").innerHTML= oneName + " wins game!";
 	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
     console.log('player one wins by rounds')
 }
@@ -317,7 +318,8 @@ function gameOver(){
     console.log('player two squished')
   }else if( pTwoRounds > pOneRounds){
   	 leftImgLose();
-     document.getElementById("winner").innerHTML="Player 2 wins game!";
+  	 var twoName=document.getElementById('p2Name').value;
+     document.getElementById("winner").innerHTML=twoName + " wins game!";
 	 document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
      console.log('player two wins by rounds')
 }
@@ -433,7 +435,7 @@ function squishOne(){
 	document.getElementById('left').classList.toggle('hideMe',true);
 	document.getElementById('leftArm').classList.toggle('hideMe',true);
 	document.getElementById('leftDead').classList.toggle('hideMe',false);
-	document.getElementById('squish').classList.toggle('squishMoveRight',false);
+	document.getElementById('footDown').classList.toggle('squishMoveRight',false);
 	document.getElementById('footDown').classList.toggle('pOneSquish',true);
 	setTimeout(function(){
 		document.getElementById('rightDead').classList.toggle('pTwoEscape',true);
@@ -452,7 +454,7 @@ function squishTwo(){
 	document.getElementById('right').classList.toggle('hideMe',true);
 	document.getElementById('rightArm').classList.toggle('hideMe',true);
 	document.getElementById('rightDead').classList.toggle('hideMe',false);
-	document.getElementById('squish').classList.toggle('squishMoveRight',true);
+	document.getElementById('footDown').classList.toggle('squishMoveRight',true);
 	document.getElementById('footDown').classList.toggle('pTwoSquish',true);
 	setTimeout(function(){
 	  document.getElementById('leftDead').classList.toggle('pOneEscape',true);
