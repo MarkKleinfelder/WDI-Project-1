@@ -442,3 +442,16 @@ function armsUp(){
 		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
 }
 
+function pOneDies(){
+	leftImgLose()
+	document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
+
+}
+
+function pTwoDies(){
+	rightImgLose()
+	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
+}
+
+
+
