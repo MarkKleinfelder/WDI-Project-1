@@ -11,58 +11,12 @@ body{
 	overflow-y: hidden;
 	overflow-x:hidden;
 	z-index: -5;
-
 }
-
-.makeSmall{
-	width:38%;
-	z-index: 1;
-}
-
-
 
 .arms{
-	z-index: 5;
+	z-index: 38;
 }
-
-.buttons{
-	text-align: center;
-	height:45px;
- 	width:100px;
- 	margin:auto;
- 	z-index: 55;
- 	position:relative;
-	top:25px;
-	
-}
-
-#startButton{
-	font-family:'Pinyon Script';
-	font-size: 40px;
-	margin-top: 20px;
-	height:100px;
-	width:100px;
-	background-color:rgba(48, 204, 92, 0.3);
-	border:none;
-	border-radius: 50%;
-	animation: fadein 1s;
-	z-index: 68;
-}
-
-#resetButton{
-	font-size: 22px;
-	margin-top:-25px;
-	height:100px;
-	width:100px;
-	background-color:rgba(255, 238, 5, 0.3);
-	border:none;
-	border-radius: 50%;
-	z-index: 90;
-	animation: fadein 2s;
-	z-index: 68;
-
-}
-
+/*--------------------answer inputs---------*/
 .answerInputs{
 	position:absolute;
 	top:525;
@@ -104,6 +58,42 @@ body{
 .backGround{
 	display:none;
 }
+/*----------------------top buttons start/try again-------------*/
+.buttons{
+	text-align: center;
+	height:45px;
+ 	width:100px;
+ 	margin:auto;
+ 	z-index: 55;
+ 	position:relative;
+	top:25px;
+}
+#resetButton{
+	font-size: 22px;
+	margin-top:-25px;
+	height:100px;
+	width:100px;
+	background-color:rgba(255, 238, 5, 0.3);
+	border:none;
+	border-radius: 50%;
+	z-index: 90;
+	animation: fadein 2s;
+	z-index: 68;
+
+}
+#startButton{
+	font-family:'Pinyon Script';
+	font-size: 40px;
+	margin-top: 20px;
+	height:100px;
+	width:100px;
+	background-color:rgba(48, 204, 92, 0.3);
+	border:none;
+	border-radius: 50%;
+	animation: fadein 1s;
+	z-index: 68;
+}
+
 
 .countDownDisplay{
 	height:100px;
@@ -120,14 +110,7 @@ body{
 	z-index: -5px;
 }
 
-#squish{             
-	margin:0px;
-	position:absolute;
-	top:0px;
-	overflow:;
-	z-index: 12;
-	
-}
+
 
 
 /*#squish{               second try
@@ -144,6 +127,16 @@ body{
 	transition:bottom .25s linear;
 	z-index: 45;
 }*/
+
+/*-------------------foot and foot animation---------*/
+#squish{             
+	margin:0px;
+	position:absolute;
+	top:0px;
+	overflow:;
+	z-index: 12;
+}
+
 .squishMoveRight{
 	left:600px;
 
@@ -167,15 +160,25 @@ body{
 
 .pTwoSquish{
 	bottom:10px;
-
 }
+
+.squishLeft{
+	height:75px;
+}
+
+.squishRight{
+	height:75px;
+}
+
+
+/*--------------------------------------------*/
 
 .hideMe{
 	display: none;
 	
 
 }
-
+/*---------------------character Images-----------*/
 .images{
 	position:absolute;
 	height:620px;
@@ -183,14 +186,16 @@ body{
 	left:0;
 	overflow-x: hidden;
 }
+.makeSmall{
+	width:38%;
+	z-index: 1;
+}
 
 
 .leftImg{  /*--------left body--------*/
 	position:relative;
 	top:0px;
 	left:50px;
-	/*transition: transform .5s ease-in, top .5s linear;
-	transition-delay: .25s;----*/
 	z-index: 5;
 }
 
@@ -199,15 +204,12 @@ body{
 	top:112px;
 	left:49px;
 	transform: rotate(60deg);
-	transition: transform .25s ease-out; /*--.25s ease-out for arm lift--*/
+	transition: transform .25s ease-out; /*--for arm lift--*/
 	z-index: 10;
 }
-/*--------.leftImgLose{  ----left body fall----
-	transform: rotate(-80deg);
-	top:200px;
-}-----*/
 
-.leftArmRotating{ /*-----transform: rotate(-5deg);-----arm lift fire---------*/
+
+.leftArmRotating{ /*----------arm lift fire---------*/
 	transform:rotate(-5deg);
 	
 }
@@ -221,31 +223,63 @@ body{
 	z-index: 5;
 	margin:0;
 }
- 
+
+.rightImg{   /*--------right body------------------------------------*/
+	position:relative;
+	top:0px;
+	left:225px;
+	z-index: 5;
+
+}
+
+.rightImgDead{
+	position:relative;
+	top:0px;
+	right:0px;
+	left:225px;
+	transition: transform .5s ease-in, top .5s linear, left .5s ease-out, right .5s ease-in;
+	transition-delay: .25s;
+	z-index: 5;
+	margin:0;
+}
+
+
+.right{  /*-----------right arm-----------*/
+	position:absolute;
+	top:113px;
+	left:748px;
+	transform: rotate(-60deg);
+	transition: transform .25s ease-out;
+	z-index: 10;
+}
+
+
+
+.rightArmRotating{
+	transform:rotate(3deg);
+}
+
+
+/*------------------escape transitions--------------------------*/
+
 .pOneEscape{
   left: -400px;
 }
 
+.pTwoEscape{
+	left:750px;
+}
+/*------------------------------kill transitions-----------------*/
 .killLeft{
 	transform: rotate(-80deg);
 	top:200px;
 }
 
-.squishLeft{
-	height:75px;
+.killRight{
+	transform: rotate(-90deg);
+	top:290px;
+	left:50px;
 }
-
-.squishRight{
-	height:75px;
-}
-
-/*.leftSide{
-	background-image:url("Assets/DuelingLeft.png");
-	display:inline-block;
-    background-repeat: no-repeat;
-	background-position: top left;
-
-}*/
 
 .playerNameOne{
 	font-family:'Pinyon Script';
@@ -330,52 +364,8 @@ body{
 	z-index: 55;
 }
 
-.rightImg{   /*--------right body---------*/
-	position:relative;
-	top:0px;
-	left:225px;
-	z-index: 5;
-
-}
-
-.rightImgDead{
-	position:relative;
-	top:0px;
-	right:0px;
-	left:225px;
-	transition: transform .5s ease-in, top .5s linear, left .5s ease-out, right .5s ease-in;
-	transition-delay: .25s;
-	z-index: 5;
-	margin:0;
-}
-
-.pTwoEscape{
-	left:750px;
-
-}
-
-.killRight{
-	transform: rotate(-90deg);
-	top:290px;
-	left:50px;
-	
-}
 
 
-.right{  /*-----------right arm-----------*/
-	position:absolute;
-	top:113px;
-	left:748px;
-	transform: rotate(-60deg);
-	transition: transform .25s ease-out;
-	z-index: 10;
-}
-
-
-
-.rightArmRotating{
-	transform:rotate(3deg);
-}
 
 
 .roundsBoxOne{
@@ -416,6 +406,8 @@ body{
 	display:none;
 }
 
+
+
 .tooSlowOne{
 	position:absolute;
 	width:200px;
@@ -435,7 +427,7 @@ body{
 	animation: fadein 2s;
 }
 
-
+/*---------------winner and announcement box-----------*/
 #winner{
 	font-family:VictorianParlor;
 	font-weight: lighter;
@@ -469,7 +461,7 @@ body{
 	animation: fadein 3s;
 }
 
-.clock.simple:after{
+.clock:after{
 	background: #000;
 	border-radius: 50%;
 	content: '';
@@ -525,7 +517,7 @@ body{
 }
 
 
-/*----clock animation-----*/
+/*----clock animation---------------*/
 
 @keyframes rotate{
 	100%{
@@ -533,26 +525,6 @@ body{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*--------------animations-----------*/
 

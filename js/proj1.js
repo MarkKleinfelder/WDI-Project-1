@@ -1,21 +1,13 @@
 window.onload = function ready(){
 	console.log("WE'RE RUNNING JAVASCRIPT");
-	//clearInterval(beginTimer);
     document.getElementById('resetButton').classList.toggle('hideMe',true);
     document.getElementById('clock').classList.toggle('hideMe',true);
     document.getElementById('millisecHand').classList.toggle('milliseconds-container-animate',false);
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',false);
 	document.getElementById('slowOne').classList.toggle('hideMe',true)
 	document.getElementById('slowTwo').classList.toggle('hideMe',true)
-	//document.getElementById('answerBox').classList.toggle('hideMe',false);
-    //document.getElementById('answerBoxTwo').classList.toggle('hideMe',false);
-
 };
 
-
-//check answer input placement after foot
-//change player 1/2 names for messages
-//move round 'x' down
 
 
 
@@ -46,7 +38,6 @@ function countOne(){
 	setTimeout(timerTwo, 3000)
 	setTimeout(timerOne, 4000)
 	setTimeout(timerPOne, 5000)
-
 }
 
 function countTwo(){
@@ -55,10 +46,10 @@ function countTwo(){
 	setTimeout(timerTwo, 3000)
 	setTimeout(timerOne, 4000)
 	setTimeout(timerPTwo, 5000)
-
-
 }
-//----ready message p1----//**changed from countDownDisplay to 'winner'**//
+
+//------------------------------count down timer------------------------//
+//----ready message p1----//
 function timerPOneReady(){
 	var oneName=document.getElementById('p1Name').value;
 	document.getElementById('winner').innerHTML = "Ready " + oneName;
@@ -87,9 +78,7 @@ function timerPOne(){
 	pOneBegin();
   	document.getElementById('answerBox').focus();
   	document.getElementById('pOnePointer').classList.toggle('hideMe',false);
-
-
-  	}
+  }
 
 //-------p2 start-----//
 function timerPTwo(){
@@ -154,7 +143,6 @@ var pTwoTime = 0;
 var pTwoTimer;
 
 function pTwoBegin(){
-	//document.getElementById('answerBoxTwo').focus();
 	setQTwo();
 	stopWatchStart();
     pTwoTimer = setInterval(function(){
@@ -168,9 +156,6 @@ function pTwoStop(){
 	pTwoScore += pTwoTime;
 	document.getElementById('pTwoScore').innerHTML = pTwoScore;
 	addDifficulty();
-	//document.getElementById('winner').innerHTML = "";
-	//resetButton();
-	//countOne();
 	console.log('button working');
 };
 
@@ -219,7 +204,7 @@ var pTwoQ;
 function setQTwo(){
 	makeChar();
 	pTwoQ=question;
-	document.getElementById('qBox').innerHTML = pTwoQ;	//<---changed from qBoxTwo--//
+	document.getElementById('qBox').innerHTML = pTwoQ;
 };
 
 
@@ -227,7 +212,7 @@ function setQTwo(){
 //---------------PLAYER 2 ANSWER CHECK----------------// 
 
 var answerTwo = document.getElementById('answerBoxTwo');
-var challengeTwo = document.getElementById('qBox'); //<---changed from qBoxTwo---//
+var challengeTwo = document.getElementById('qBox'); 
 
 function checkAnswerTwo(){
 	console.log('checking answer 2. Thanks!');
@@ -239,10 +224,9 @@ function checkAnswerTwo(){
 		document.getElementById('pTwoPointer').classList.toggle('hideMe',true);
 		document.getElementById('answerBoxTwo').value = '';
 		document.getElementById('answerBox').focus();
-		pTwoStop();
 		document.getElementById('winner').value = '';
+		pTwoStop();
 		winState();
-
 	}else{
 		console.log('P2 wrong');
 		document.getElementById('answerBoxTwo').value = '';
@@ -268,8 +252,6 @@ function winState(){
 			document.getElementById('pTwoTimer').innerHTML = '';
 			pOneTime = 0;
 			pTwoTime = 0;
-			//document.getElementById('winner').innerHTML='';
-			
     	}, 2000);
 	    }else{
 	      var twoName=document.getElementById('p2Name').value;
@@ -282,30 +264,27 @@ function winState(){
 			  document.getElementById('pTwoTimer').innerHTML = '';
 			  pOneTime = 0;
 			  pTwoTime = 0;
-			  //document.getElementById('winner').innerHTML='';
-
     	  }, 2000);
       
-      }if(totalRounds === 5){ //----checks game over condition---//
+      }if(totalRounds === 5){ //----checks game over condition--------------//
       	 document.getElementById('pOneTimer').innerHTML = '';
 	     document.getElementById('pTwoTimer').innerHTML = '';
 	     document.getElementById('pOnePointer').classList.toggle('hideMe',true);
 	     document.getElementById('pTwoPointer').classList.toggle('hideMe',true);
-			  pOneTime = 0;
-			  pTwoTime = 0;
-		gameOver();
+	     pOneTime = 0;
+		 pTwoTime = 0;
+		 gameOver();
 
-   }else if (totalRounds < 5){
+      }else if (totalRounds < 5){
    	countOne();
    }
 };
-
+//-------------------------------gameOver functions-----------------//
 function gameOver(){
   document.getElementById('clock').classList.toggle('hideMe',true);
   resetButton();
   if(pOneScore >= pTwoScore*1.2 && pOneRounds > pTwoRounds){
-    squishOne();
-    //document.getElementById("winner").innerHTML="Too Slow!";
+    squishOne();  //-------secondary win state-----//
     console.log("player one squished")
   }else if(pOneRounds > pTwoRounds){
   	rightImgLose();
@@ -315,7 +294,7 @@ function gameOver(){
     console.log('player one wins by rounds')
 }
   if (pTwoScore >= pOneScore*1.2 && pTwoRounds > pOneRounds){
-  	squishTwo();
+  	squishTwo();  //--------secondary win state-----//
   	document.getElementById("winner").innerHTML="";
     console.log('player two squished')
   }else if( pTwoRounds > pOneRounds){
@@ -324,19 +303,7 @@ function gameOver(){
      document.getElementById("winner").innerHTML=twoName + " wins the game!";
 	 document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
      console.log('player two wins by rounds')
-}
-
-    /*if(pOneRounds > pTwoRounds){
-		rightImgLose();
-		document.getElementById("winner").innerHTML="Player 1 wins game!";
-		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
-		
-	}else{
-		leftImgLose();
-		document.getElementById("winner").innerHTML="Player 2 wins game!";
-		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
-		
-} -----------*******Original gameOver check********-------*/
+  }
 }
 
 //--------------------TRY AGAIN FUNCTION----------------------//
@@ -358,6 +325,7 @@ function tryAgain(){
 	//pTwoTime = 0;
 	totalRounds = 0;
 
+//---------------------------resets text fields and transition states---------//
 	document.getElementById('winner').innerHTML='Your abilities as a warrior are beyond reproach.';
 	document.getElementById('resetButton').classList.toggle('hideMe', true)
 	document.getElementById('startButton').style.visibility = 'visible';
@@ -365,23 +333,25 @@ function tryAgain(){
 	document.getElementById('leftArm').classList.toggle('leftArmRotating',false);
 	document.getElementById('pOnePointer').classList.toggle('hideMe',true);
 	document.getElementById('pTwoPointer').classList.toggle('hideMe',true);
+
 //--------resets left body---------------//
 	document.getElementById('left').classList.toggle('hideMe',false);
 	document.getElementById('leftArm').classList.toggle('hideMe',false);
 	document.getElementById('leftDead').classList.toggle('hideMe',true);
 	document.getElementById('leftDead').classList.toggle('killLeft',false);
+
 //------------resets right body---------//
 	document.getElementById('right').classList.toggle('hideMe',false);
 	document.getElementById('rightArm').classList.toggle('hideMe',false);
 	document.getElementById('rightDead').classList.toggle('hideMe',true);
 	document.getElementById('rightDead').classList.toggle('killRight',false);
+
 //-------------resets squish ---------//
     document.getElementById('footDown').classList.toggle('pOneSquish',false);
     document.getElementById('leftDead').classList.toggle('squishLeft',false);
-
-    
-	document.getElementById('footDown').classList.toggle('pTwoSquish',false);
+    document.getElementById('footDown').classList.toggle('pTwoSquish',false);
     document.getElementById('rightDead').classList.toggle('squishRight',false);
+
 //--------------resets escape---------//
     document.getElementById('rightDead').classList.toggle('pTwoEscape',false);
     document.getElementById('leftDead').classList.toggle('pOneEscape',false);
@@ -413,14 +383,13 @@ function rightImgLose(){
 };
 
 
-//-----------------stop watch start stop functions------//
+//-----------------stop watch start stop functions-----------------//
 
 function stopWatchStart(){
 	document.getElementById('millisecHand').classList.toggle('milliseconds-container-animate',true);
 	document.getElementById('secHand').classList.toggle('seconds-container-animate',true);
     document.getElementById('millisecHand').classList.toggle('animationPause',false);
 	document.getElementById('secHand').classList.toggle('animationPause',false);
-
 }
 
 function stopWatchStop(){
@@ -430,7 +399,7 @@ function stopWatchStop(){
 }
 
 
-//--------squish functions--------//
+//--------secondary winstate 'squish' functions----------------------//
 
 function squishOne(){
 	document.getElementById('answerBox').classList.toggle('hideMe',true);
@@ -449,8 +418,6 @@ function squishOne(){
 		document.getElementById('slowTwo').classList.toggle('hideMe',false);
 }, 200);
 }
-
-
 function squishTwo(){
 	document.getElementById('answerBox').classList.toggle('hideMe',true);
     document.getElementById('answerBoxTwo').classList.toggle('hideMe',true);
@@ -467,7 +434,6 @@ function squishTwo(){
 	  document.getElementById('rightDead').classList.toggle('squishRight',true);
 	  document.getElementById('slowOne').classList.toggle('hideMe',false);
 }, 200);
-
 }
 
 //-------test functions-----------//
