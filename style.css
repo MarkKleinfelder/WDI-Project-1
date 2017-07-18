@@ -544,6 +544,7 @@ body{
 	background-position: 47% -25px;
 	background-size: 960px 700px;
 	background-repeat: no-repeat;
+	z-index: -1;
 
 	
 }
@@ -561,6 +562,7 @@ body{
 	background-position: 50% 0%;
 	background-size: 150px 90px;
 	background-repeat: no-repeat;
+
 
 }
 
