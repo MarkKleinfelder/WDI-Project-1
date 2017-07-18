@@ -437,8 +437,20 @@ function squishTwo(){
 }
 
 //-------test functions-----------//
-function armsUp(){
+function testArmsUp(){
 		document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
 		document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
 }
+
+function testOneDies(){
+	leftImgLose()
+	document.getElementById('rightArm').classList.toggle('rightArmRotating',true);
+
+}
+
+function testTwoDies(){
+	rightImgLose()
+	document.getElementById('leftArm').classList.toggle('leftArmRotating',true);
+}
+
 
