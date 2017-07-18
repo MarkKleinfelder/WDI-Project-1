@@ -532,6 +532,78 @@ body{
 	to{opacity:1;}
 }
 
+/*--------------------------Landing Page--------------------*/
+/*----------------------------------------------------------*/
+
+.boarder{
+	position:absolute;
+	top:0;
+	width:100%;
+	height:800px;
+	background-image: url('assets/boarder.png');
+	background-position: 47% -25px;
+	background-size: 960px 700px;
+	background-repeat: no-repeat;
+
+	
+}
+
+.textSection{
+	margin:auto;
+	
+
+}
+
+.pistols{
+	margin-top:20px;
+	height:90px;
+	background-image: url('assets/pistols.gif');
+	background-position: 50% 0%;
+	background-size: 150px 90px;
+	background-repeat: no-repeat;
+
+}
+
+.welcomeDiv{
+	font-family:VictorianParlor;
+	text-align: center;
+	font-size: 35px;
+
+}
 
 
+.welcome{
+	margin-top:40px;
+	margin-bottom:15px;
 
+}
+
+h3.howToHead{
+	font-family: VictorianParlor;
+	font-size:38px;
+}
+.howToDiv{
+	margin:auto;
+	text-align:center;
+	font-size: 34px;
+	max-width:650px;
+}
+
+.howToPar{
+	margin:10px 0px;
+}
+
+.enterButton{
+	font-family:VictorianParlor;
+	font-size:35px;
+	margin:auto;
+	text-align: center;
+	margin-top:-64px;
+	padding-right: 10px;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+	background-color:;
+}
