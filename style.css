@@ -1,20 +1,23 @@
 
 body{
+	min-width:900px;
 	font-family:"Pinyon Script", sans-serif;
 	background-image: url('assets/DuelBG2.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100%;
+	background-size: 100% ;
 	margin:0px;
 	padding:0px;
 	z-index: -5;
 }
 
 .wrapper{
+	
 	position:absolute;
 	min-width:100%;
-	margin:0px;
+	/*margin:0px;*/
 	padding:0px;
+
 
 }
 
@@ -36,6 +39,7 @@ body{
 .gameCenter{
 	position: absolute;
 	left:13em;
+	z-index: -10;
 	
 }
 
@@ -43,8 +47,6 @@ body{
 .bottomRow{
 	position: absolute;
 	top:39em;
-	height:100%;
-	width:100%;
 
 
 
@@ -144,8 +146,11 @@ body{
 
 
 .floorImg{
-	top:40.5em;
-	z-index: -5px;
+	position:absolute;
+	top:0em;
+	z-index: -5;
+	width:1280px;
+	height:65px;
 }
 
 
