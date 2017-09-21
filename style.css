@@ -3,7 +3,7 @@ body{
 	min-width:900px;
 	font-family:"Pinyon Script", sans-serif;
 	background-image: url('assets/DuelBG2.png');
-	background-repeat: no-repeat;
+	background-repeat: ;
 	background-attachment: fixed;
 	background-size: 100% ;
 	margin:0px;
@@ -654,4 +654,8 @@ a{
 	text-decoration: none;
 	color:black;
 	background-color:;
+}
+
+.indexMain{
+
 }
