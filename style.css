@@ -1,16 +1,55 @@
-html{
-	height:100%;
-}
+
 body{
-	max-width: 1280px;
+	min-width:900px;
 	font-family:"Pinyon Script", sans-serif;
 	background-image: url('assets/DuelBG2.png');
-	background-position: center;
-	background-repeat:no-repeat; 
-	background-size: cover;
-	overflow-y: hidden;
-	overflow-x:hidden;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% ;
+	margin:0px;
+	padding:0px;
 	z-index: -5;
+}
+
+.wrapper{
+	
+	position:absolute;
+	min-width:100%;
+	/*margin:0px;*/
+	padding:0px;
+
+
+}
+
+.topRow{		
+	position:absolute;
+
+}
+
+.gameLeft{
+	position:absolute;
+	top:8em;
+}
+
+.gameRight{
+	position:absolute;
+	top:8em;
+}
+
+.gameCenter{
+	position: absolute;
+	left:13em;
+	z-index: -10;
+	
+}
+
+
+.bottomRow{
+	position: absolute;
+	top:39em;
+
+
+
 }
 
 .arms{
@@ -19,8 +58,8 @@ body{
 /*--------------------answer inputs---------*/
 .answerInputs{
 	position:absolute;
-	top:525;
-	left: 538px;
+	top:26em;
+	left: 20.7em;
 	width:250px;
 	height:100px;
 	z-index: 99;
@@ -32,7 +71,7 @@ body{
 	top:20px;
 	text-align: center;
 	font-size: 30px;
-	margin:25px;
+	margin:20px;
 	height: 45px;
 	width: 45px;
 	background:transparent;
@@ -46,7 +85,7 @@ body{
 	top:20px;
 	text-align: center;
 	font-size: 30px;
-	margin:25px;
+	margin:20px;
 	height: 45px;
 	width: 45px;
 	background:transparent;
@@ -66,11 +105,14 @@ body{
  	margin:auto;
  	z-index: 55;
  	position:relative;
-	top:25px;
+	top:55px;
+	left:52%;
 }
 #resetButton{
 	font-size: 22px;
-	margin-top:-10px;
+	position:absolute;
+	right:0px;
+	top:0px;
 	height:100px;
 	width:100px;
 	background-color:rgba(255, 238, 5, 0.3);
@@ -104,10 +146,11 @@ body{
 
 
 .floorImg{
-	position:relative;
-	width:100%;
-	bottom:50px;
-	z-index: -5px;
+	position:absolute;
+	top:0em;
+	z-index: -5;
+	width:1280px;
+	height:65px;
 }
 
 
@@ -129,7 +172,7 @@ body{
 }*/
 
 /*-------------------foot and foot animation---------*/
-#squish{             
+/*#squish{             
 	margin:0px;
 	position:absolute;
 	top:0px;
@@ -140,10 +183,10 @@ body{
 .squishMoveRight{
 	left:600px;
 
-}
+}*/
 
 
-.foot{
+/*.foot{
 	position: relative;
 	height:715px;
 	width:625px;
@@ -151,7 +194,7 @@ body{
 	transition: bottom .25s linear;
 	z-index: 35;
 }
-
+*/
 
 
 .pOneSquish{
@@ -187,7 +230,7 @@ body{
 	overflow-x: hidden;
 }
 .makeSmall{
-	width:38%;
+	width:30em;
 	z-index: 1;
 }
 
@@ -227,7 +270,7 @@ body{
 .rightImg{   /*--------right body------------------------------------*/
 	position:relative;
 	top:0px;
-	left:225px;
+	left:715px;
 	z-index: 5;
 
 }
@@ -318,8 +361,8 @@ body{
 
 
 .playerNames{
-	position:absolute;
-	top:150;
+	/*position:absolute;
+	top:150;*/
 	z-index: 34;
 	
 }
@@ -350,7 +393,8 @@ body{
 
 .questionBoxDiv{
 	margin: auto;
-	margin-top:100px;
+	margin-left:21em;
+	margin-top:75px;
 	border:2px solid black;
 	height:90px;
 	width:170px;
@@ -364,20 +408,21 @@ body{
 	margin-top: 15px;
 	font-size: 65px;
 	text-align:center;
+	left:15px;
 	z-index: 55;
 }
 
 .roundsBoxOne{
 	position:absolute;
-	top:125px;
+	top:100px;
 	left:250px;
 	
 }
 
 .roundsBoxTwo{
 	position:absolute;
-	top:125px;
-	right:280px;
+	top:100px;
+	left:58em;
 
 }
 
@@ -412,7 +457,7 @@ body{
 	width:200px;
 	font-size:45px;
 	top:320px;
-	left:150px;
+	left:0px;
 	animation: fadein 2s;
 	
 }
@@ -422,7 +467,7 @@ body{
 	width:200px;
 	font-size: 45px;
 	top:320px;
-	left:950px;
+	left:700px;
 	animation: fadein 2s;
 }
 
@@ -438,7 +483,8 @@ body{
 	border-radius: 25px;
 	text-align: center;
 	margin:auto;
-	margin-top:175px;
+	margin-left: 1em;
+	margin-top:200px;
 	height:50px;
 	width:800px;
 	background-color:;
@@ -450,7 +496,7 @@ body{
 .clock{
 	position:absolute;
 	top:15px;
-	left:44%;
+	left:34.2em;
 	border-radius: 50%;
 	background:url('assets/watch1.png') no-repeat center;
 	background-size: 88%;
