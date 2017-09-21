@@ -413,6 +413,8 @@ body{
 }
 
 .roundsBoxOne{
+	width:300px;
+	height:55px;
 	position:absolute;
 	top:95px;
 	left:250px;
@@ -420,6 +422,8 @@ body{
 }
 
 .roundsBoxTwo{
+	width:300px;
+	height:55px;
 	position:absolute;
 	top:95px;
 	left:58em;
