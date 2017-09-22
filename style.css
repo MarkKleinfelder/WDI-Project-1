@@ -1,4 +1,5 @@
 
+
 body{
 	min-width:900px;
 	font-family:"Pinyon Script", sans-serif;
@@ -6,6 +7,8 @@ body{
 	background-repeat: ;
 	background-attachment: fixed;
 	background-size: 100% ;
+	overflow-y: hidden;
+	overflow-x: hidden;
 	margin:0px;
 	padding:0px;
 	z-index: -5;
@@ -17,8 +20,6 @@ body{
 	min-width:100%;
 	/*margin:0px;*/
 	padding:0px;
-
-
 }
 
 .topRow{		
@@ -172,7 +173,7 @@ body{
 }*/
 
 /*-------------------foot and foot animation---------*/
-/*#squish{             
+#squish{             
 	margin:0px;
 	position:absolute;
 	top:0px;
@@ -183,10 +184,10 @@ body{
 .squishMoveRight{
 	left:600px;
 
-}*/
+}
 
 
-/*.foot{
+.foot{
 	position: relative;
 	height:715px;
 	width:625px;
@@ -194,24 +195,20 @@ body{
 	transition: bottom .25s linear;
 	z-index: 35;
 }
-*/
+
 
 
 .pOneSquish{
-	bottom:10px;
+	bottom:0px;
 }
 
 .pTwoSquish{
 	bottom:10px;
 }
 
-.squishLeft{
-	height:75px;
-}
 
-.squishRight{
-	height:75px;
-}
+
+
 
 
 /*--------------------------------------------*/
@@ -236,7 +233,7 @@ body{
 
 
 .leftImg{  /*--------left body--------*/
-	position:relative;
+	position:absolute;
 	top:0px;
 	left:50px;
 	z-index: 5;
@@ -261,7 +258,7 @@ body{
 	position:relative;
 	top:0px;
 	left:50px;
-	transition: transform .5s ease-in, top .5s linear, height .35s linear,left .5s ease-in;
+	transition: transform .5s ease-in, height .5s linear, left .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
@@ -278,9 +275,8 @@ body{
 .rightImgDead{
 	position:relative;
 	top:0px;
-	right:0px;
-	left:225px;
-	transition: transform .5s ease-in, top .5s linear, left .5s ease-out, right .5s ease-in;
+	left:715px;
+	transition: transform .5s ease-in, height .5s linear, left .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
@@ -310,7 +306,8 @@ body{
 }
 
 .pTwoEscape{
-	left:750px;
+	position:absolute;
+	left:-30em;
 }
 /*------------------------------kill transitions-----------------*/
 .killLeft{
@@ -321,7 +318,7 @@ body{
 .killRight{
 	transform: rotate(-90deg);
 	top:290px;
-	left:50px;
+	left:40em;
 }
 
 .playerNameOne{
@@ -358,6 +355,24 @@ body{
 
 	
 }
+
+
+
+.squishLeft{
+	height:75px;
+	top:30em;
+	position:absolute;
+	left:50px;
+}
+
+.squishRight{
+	height:75px;
+	top:30em;
+	position:absolute;
+}
+
+
+
 
 
 .playerNames{

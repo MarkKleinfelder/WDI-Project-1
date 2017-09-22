@@ -416,7 +416,7 @@ function squishOne(){
 		document.getElementById('rightDead').classList.toggle('pTwoEscape',true);
 		document.getElementById('leftDead').classList.toggle('squishLeft',true);
 		document.getElementById('slowTwo').classList.toggle('hideMe',false);
-}, 200);
+}, 150);
 }
 function squishTwo(){
 	document.getElementById('answerBox').classList.toggle('hideMe',true);
@@ -430,10 +430,10 @@ function squishTwo(){
 	document.getElementById('squish').classList.toggle('squishMoveRight',true);
 	document.getElementById('footDown').classList.toggle('pTwoSquish',true);
 	setTimeout(function(){
-	  document.getElementById('leftDead').classList.toggle('pOneEscape',true);
-	  document.getElementById('rightDead').classList.toggle('squishRight',true);
-	  document.getElementById('slowOne').classList.toggle('hideMe',false);
-}, 200);
+		document.getElementById('leftDead').classList.toggle('pOneEscape',true);
+		document.getElementById('rightDead').classList.toggle('squishRight',true);
+		document.getElementById('slowOne').classList.toggle('hideMe',false);
+	}, 150);
 }
 
 //-------test functions-----------//
