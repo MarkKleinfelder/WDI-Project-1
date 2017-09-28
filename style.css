@@ -101,7 +101,7 @@ body{
 }
 /*----------------------top buttons start/try again-------------*/
 .buttons{
-	text-align: center;
+	/*text-align: center;*/
 	height:10px;
  	width:100px;
  	margin:auto;
