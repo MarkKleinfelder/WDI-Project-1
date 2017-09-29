@@ -60,12 +60,12 @@ body{
 }
 /*--------------------answer inputs---------*/
 .answerInputs{
-	position:absolute;
-	top:26em;
-	left: 20.7em;
-	width:250px;
-	height:100px;
-	z-index: 99;
+	/*position:absolute;*/
+	/*top:26em;
+	left: 20.7em;*/
+	margin: 0 auto;
+	text-align: center;
+	z-index: 35;
 }
 
 
@@ -80,7 +80,7 @@ body{
 	background:transparent;
 	border-radius: 25px;
 	animation: fadein 1s;
-	z-index: 20;
+	z-index: 35;
 }
 
 #answerBoxTwo{
@@ -94,7 +94,7 @@ body{
 	background:transparent;
 	border-radius: 25px;
 	animation: fadein 1s;
-	z-index: 22;
+	z-index: 20;
 }
 
 .backGround{
@@ -178,6 +178,7 @@ body{
 #squish{             
 	margin:0px;
 	position:absolute;
+	width:25%;
 	top:0px;
 	overflow:;
 	z-index: 12;
@@ -201,10 +202,12 @@ body{
 
 
 .pOneSquish{
+	transition-delay: .2s;
 	bottom:0px;
 }
 
 .pTwoSquish{
+	transition-delay: .15s;
 	bottom:10px;
 }
 
@@ -258,9 +261,10 @@ body{
 
 .leftImgDead{	
 	position:relative;
+	height:538px;
 	top:0px;
 	left:50px;
-	transition: transform .5s ease-in, height .5s linear, left .5s ease-in;
+	transition: transform .5s ease-in, top .5s linear, height 538px, left .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
@@ -275,10 +279,11 @@ body{
 }
 
 .rightImgDead{
-	position:relative;
+	position:absolute;
+	height:538px;
 	top:0px;
 	left:715px;
-	transition: transform .5s ease-in, height .5s linear, left .5s ease-in;
+	transition:transform .5s ease-in, height .1s linear, top .5s linear,  height 538px, left .5s ease-in;
 	transition-delay: .25s;
 	z-index: 5;
 	margin:0;
@@ -337,6 +342,7 @@ body{
 	box-shadow: none;
 	border:none;
 	background:transparent;
+	z-index: 20;
 	
 }
 
@@ -358,7 +364,9 @@ body{
 	
 }
 
-
+#squish{
+	z-index: 20;
+}
 
 .squishLeft{
 	height:75px;
@@ -413,7 +421,7 @@ body{
 .questionBoxDiv{
 	margin: auto;
 	/*margin-left:21em;--------------*/
-	margin-top:75px;
+	margin-top:85px;
 	border:2px solid black;
 	height:90px;
 	width:170px;
@@ -433,22 +441,22 @@ body{
 
 .roundsBoxOne{
 	display: inline-block;
-	position:relative;
+	position:absolute;
 	width:25%;
 	height:55px;
-	top:25px;
+	top:100px;
 	left:20%;
 	
 }
 
 .roundsBoxTwo{
 	display: inline-block;
-	position:relative;
+	position:absolute;
 	width:25%;
 	height:55px;
 	
-	top:25px;
-	left:46%;
+	top:100px;
+	left:65em;
 
 }
 
@@ -484,7 +492,7 @@ body{
 	width:200px;
 	font-size:45px;
 	top:320px;
-	left:0px;
+	left:7em;
 	animation: fadein 2s;
 	
 }
@@ -494,7 +502,7 @@ body{
 	width:200px;
 	font-size: 45px;
 	top:320px;
-	left:700px;
+	left:23em;
 	animation: fadein 2s;
 }
 
@@ -511,7 +519,7 @@ body{
 	/*text-align: center;---------------------*/
 	margin:auto;
 	/*margin-left: 1em;---------------------*/
-	margin-top:150px;
+	margin-top:100px;
 	height:50px;
 	width:800px;
 	background-color:;
@@ -527,7 +535,7 @@ body{
 .clock{
 	position:absolute;
 	top:15px;
-	left:34.2em;
+	left:35em;
 	border-radius: 50%;
 	background:url('assets/watch1.png') no-repeat center;
 	background-size: 88%;
