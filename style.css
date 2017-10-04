@@ -412,7 +412,7 @@ body{
 	left:250px;
 	margin-right:0px;*/
 	position: absolute;
-	margin-left:47.5em;
+	margin-left:49em;
 	height:50px;
 	width:100px;
 	animation: fadein .5s;
@@ -445,7 +445,7 @@ body{
 	width:25%;
 	height:55px;
 	top:100px;
-	left:20%;
+	left:15em;
 	
 }
 
@@ -456,7 +456,7 @@ body{
 	height:55px;
 	
 	top:100px;
-	left:65em;
+	left:57em;
 
 }
 
@@ -519,7 +519,7 @@ body{
 	/*text-align: center;---------------------*/
 	margin:auto;
 	/*margin-left: 1em;---------------------*/
-	margin-top:100px;
+	margin-top:115px;
 	height:50px;
 	width:800px;
 	background-color:;
